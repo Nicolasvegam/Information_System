@@ -1,0 +1,86 @@
+
+
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>LOGIN</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--    <link rel=stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link href="static/css2/style.css" rel="stylesheet">
+</head>
+<style>
+body {margin: 5px 5px;}
+.btn {
+  background-color: #00acf7; /*CECOMP blue*/
+  border: none;
+  color: white;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+</style>
+
+<body>
+
+{% block content %}
+
+    <div class="container-fluid">
+        <!--TERA LOGO-->
+        <a class="navbar-brand" href="#" ><img src="static/img/logo2.png" alt="56"></a>
+        <!--    -->
+        <div class="row">
+            <div class="col-nd-4 col-sm-4 col-xs-12"></div>
+            <div class="col-nd-4 col-sm-4 col-xs-12">
+            <!--start form-->
+                <form action="" method="post" class="form-container">
+                    <img class="img-responsive" src="static/img/cecomp_logo.png" alt="logo cecomp" >
+                    <div class="form-group">
+                        {{ formReg.username.label }}
+                          {{ formReg.username(class='form-control',placeholder='please write your username') }}
+                            {% for error in formReg.username.errors %}
+                              <div class="alert alert-danger" role="alert">
+                                {{ error }}
+                              </div>
+                          {% endfor %}
+    <!--                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+                    </div>
+                    <div class="form-group">
+                        {{ formReg.password.label }}
+                          {{ formReg.password(class='form-control',placeholder='please provide your password') }}
+                            {% for error in formReg.password.errors %}
+                              <div class="alert alert-danger" role="alert">
+                                {{ error }}
+                              </div>
+                          {% endfor %}
+                    </div>
+
+                    {{ formReg.submit(class='btn btn-primary') }}
+                    {{ formReg.hidden_tag() }}
+
+                </form>
+                <!--form end-->
+            </div>
+            <div class="col-lg-6 col-md-6" style="height: 100%">
+    <!--            <img src="img/quote.png" class="rounded float-right" alt="quote">-->
+                <img src="static/img/quote.png" class="rounded float-right" style="position:absolute;bottom:0; bottom: revert" >
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+
+<!---->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<!---->
+
+</body>
+</html>

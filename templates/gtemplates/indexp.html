@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./style.css" rel="stylesheet">
+    <title>TERA</title>
+<style>
+body {margin: 10px 20px;}
+
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgba(11, 11, 40, 0.83);
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/*sticky*/
+ul {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+/**/
+
+/*hoover«*/
+li a:hover {
+  background-color: rgba(11, 11, 40, 0.61);
+  color: #f9f9f9;
+}
+
+.active {
+  background-color: rgba(11, 11, 40, 0.6);
+}
+/**/
+
+ul.topnav li a:hover:not(.active) {background-color: #b2b2b2;}
+
+ul.topnav li a.active {background-color: rgba(11, 11, 40, 0.85);}
+
+ul.topnav li.right {float: right;}
+
+/*change from horizontal to vertical*/
+@media screen and (max-width: 550px) {
+  ul.topnav li.right,
+  ul.topnav li {float: none;}
+}
+/**/
+</style>
+
+
+</head>
+<body>
+<!--TERA LOGO-->
+<div class="container-fluid">
+    <a class="navbar-brand" href="#" ><img src="../img/logo2.png" alt="56"></a>
+</div>
+<!---->
+<ul class="topnav">
+  <li ><a class="active" href="#personal_data">Personal Data</a></li>
+  <li ><a href="#competences">Competences</a></li>
+  <li ><a href="#evolution">Evolution</a></li>
+  <li ><a href="#projects">Projects</a></li>
+  <li ><a href="#evaluations">Evaluations</a></li>
+<!--  <li class="right"><a href="#about">About</a></li>-->
+</ul>
+
+<div style="padding:0 16px; font-family: 'Ubuntu', sans-serif;">
+  <h2>Responsive Topnav Example</h2>
+  <p>This example use media queries to stack the topnav vertically when the screen size is 600px or less.</p>
+  <p>You will learn more about media queries and responsive web design later in our CSS Tutorial.</p>
+  <h4>Resize the browser window to see the effect.</h4>
+</div>
+
+
+<!---->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<!---->
+</body>
+</html>

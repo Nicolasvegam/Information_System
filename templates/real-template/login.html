@@ -1,0 +1,37 @@
+
+{% block content %}
+    <div class="row">
+    <div class="col"></div>
+    <div class="col">
+        <p>Please provide your information, then check your mail and acrivate your account.</p>
+        <form action="" method="post">
+          <div class="form-group">
+              {{ formReg.username.label }}
+              {{ formReg.username(class='form-control',placeholder='please write your username') }}
+              {% for error in formReg.username.errors %}
+                    <div class="alert alert-danger" role="alert">
+                      {{ error }}
+                    </div>
+                {% endfor %}
+          </div>
+          <div class="form-group">
+            {{ formReg.password.label }}
+              {{ formReg.password(class='form-control',placeholder='please provide your password') }}
+                {% for error in formReg.password.errors %}
+                    <div class="alert alert-danger" role="alert">
+                      {{ error }}
+                    </div>
+                {% endfor %}
+          </div>
+            {{ formReg.submit(class='btn btn-primary') }}
+            {{ formReg.hidden_tag() }}
+        </form>
+    </div>
+      <div class="col"></div>
+
+
+
+
+
+    </div>
+{% endblock content %}

@@ -1,0 +1,136 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:400,500,700);
+
+
+body {
+    padding-top: auto;
+    background: url(../img/background.jpg);
+    background-size: cover;
+}
+
+/*NAVIGATION BARS*/
+
+/*POS*/
+ul {
+  position: fixed;
+  top: 30px;
+  width: 25%;
+}
+
+ul {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+/**/
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/*GRAY COLOR BACK*/
+ul {
+  border: 1px solid #e7e7e7;
+  background-color: #f3f3f3;
+}
+
+li a {
+  color: #666;
+}
+/**/
+
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: rgba(11, 11, 40, 0.61);
+  color: #f9f9f9;
+}
+
+/*button color*/
+.active {
+  background-color: rgba(11, 11, 40, 0.61);
+}
+/**/
+
+.numBox
+    {position:relative;}
+.quote
+    {position:absolute; bottom:0; right:0;}
+
+/*END OF NAVIGATION BARS*/
+
+/*---Media Queries --*/
+@media (max-width: 992px) {
+
+  }
+@media (max-width: 768px) {
+
+}
+@media (max-width: 576px) {
+
+}
+
+
+/*--- Bootstrap Padding Fix --*/
+[class*="col-"] {
+    padding: 1rem;
+}
+
+/*center image*/
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+/**/
+
+/*login*/
+
+.form-container {
+    background: #f9f9f9;
+    border: 1px solid #b2b2b2;
+    padding: 50px 60px;
+    border-radius: 4px;
+    margin-top: 20px;
+    -webkit-box-shadow: 0px 10px 12px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 10px 12px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 10px 12px 0px rgba(0, 0, 0, 0.75);
+}
+/**/
+
+/*
+Extra small (xs) devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap
+
+Small (sm) devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+Medium (md) devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+Large (lg) devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+Extra (xl) large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+*/
+
+
+
+

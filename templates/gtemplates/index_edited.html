@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+    <meta name="description" content="Tabs are used to split content between multiple sections. Wide variety available.">
+    <meta name="msapplication-tap-highlight" content="no">
+    <link href="./style.css" rel="stylesheet">
+    <title>TERA</title>
+    <!--
+    =========================================================
+    * ArchitectUI HTML Theme Dashboard - v1.0.0
+    =========================================================
+    * Product Page: https://dashboardpack.com
+    * Copyright 2019 DashboardPack (https://dashboardpack.com)
+    * Licensed under MIT (https://github.com/DashboardPack/architectui-html-theme-free/blob/master/LICENSE)
+    =========================================================
+    * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+    -->
+
+<!--            Edited in 09/12/2019            -->
+
+
+<link href="./main.css" rel="stylesheet">
+
+<style>
+body {margin: 10px 20px;}
+{##}
+{#ul.topnav {#}
+{#  list-style-type: none;#}
+{#  margin: 0;#}
+{#  padding: 0;#}
+{#  overflow: hidden;#}
+{#  background-color: rgba(11, 11, 40, 0.83);#}
+{#}#}
+{##}
+{#ul.topnav li {float: left;}#}
+{##}
+{#ul.topnav li a {#}
+{#  display: block;#}
+{#  color: white;#}
+{#  text-align: center;#}
+{#  padding: 14px 16px;#}
+{#  text-decoration: none;#}
+{#    font-family: 'Ubuntu', sans-serif;#}
+{#}#}
+{##}
+{#/*sticky*/#}
+{#ul {#}
+{#  position: -webkit-sticky; /* Safari */#}
+{#  position: sticky;#}
+{#  top: 0;#}
+{#}#}
+{#/**/#}
+{##}
+{#/*hoover«*/#}
+{#li a:hover {#}
+{#  background-color: rgba(11, 11, 40, 0.61);#}
+{#  color: #f9f9f9;#}
+{#}#}
+{##}
+{#.active {#}
+{#  background-color: rgba(11, 11, 40, 0.6);#}
+{#}#}
+{#/**/#}
+{##}
+{#ul.topnav li a:hover:not(.active) {background-color: #b2b2b2;}#}
+{##}
+{#ul.topnav li a.active {background-color: rgba(11, 11, 40, 0.85);}#}
+{##}
+{#ul.topnav li.right {float: right;}#}
+{##}
+{#/*change from horizontal to vertical*/#}
+{#@media screen and (max-width: 550px) {#}
+{#  ul.topnav li.right,#}
+{#  ul.topnav li {float: none;}#}
+{#}#}
+/**/
+
+* {box-sizing: border-box}
+
+/* Set height of body and the document to 100% */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+}
+
+/* Style tab links */
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+}
+
+#Home {background-color: red;}
+#News {background-color: green;}
+#Contact {background-color: blue;}
+#About {background-color: orange;}
+</style>
+
+</head>
+
+
+<body>
+
+<!--TERA LOGO-->
+<div class="container-fluid">
+    <a class="navbar-brand" href="#" ><img src="../img/logo2.png" alt="TERA"></a>
+</div>
+<!---->
+    <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
+        <div class="app-main">
+             <ul class="tab-content">
+                 <div class="tab-pane active " id="tab-eg10-0" role="tabpanel">
+                     <p>In this area we will put the main information for the worker</p>
+                     <h1> </h1>
+                     <h1> </h1>
+                     <img src="../img/profile_pic_marco.png" alt="profile" class="center">
+                     <h3>Marco Veneto</h3>
+                     <h5>Overall 76</h5>
+                     <h1> ... </h1>
+                     <h1> ... </h1>
+                     <h1> ... </h1>
+                     <h1> ... </h1>
+                     <h6>Project Manager</h6>
+                     <h6>Project: Blue Torino</h6>
+                 </div>
+             </ul>
+
+            <div class="app-main__outer">
+                <ul class="nav nav-tabs body-tabs body-tabs-layout tabs-animated body-tabs-animated nav">
+                    <li class="nav-item"><a data-toggle="tab" href="#tab-content-0" class="active nav-link">Tab 1</a></li>
+                    <li class="nav-item"><a data-toggle="tab" href="#tab-content-1" class="nav-link">Tab 2</a></li>
+                    <li class="nav-item"><a data-toggle="tab" href="#tab-content-2" class="nav-link">Tab 3</a></li>
+                </ul>
+{#                <ul class="body-tabs body-tabs-layout tabs-animated body-tabs-animated nav">#}
+{#                    <li class="nav-item">#}
+{#                        <a role="tab" class="active nav-link" id="tab-0" data-toggle="tab" href="#tab-content-0">#}
+{#                            <span>Personal Data</span>#}
+{#                        </a>#}
+{#                    </li>#}
+{#                    <li class="nav-item">#}
+{#                        <a role="tab" class="nav-link" id="tab-1" data-toggle="tab" href="#tab-content-1">#}
+{#                            <span>Competences</span>#}
+{#                        </a>#}
+{#                    </li>#}
+{#                    <li class="nav-item">#}
+{#                        <a role="tab" class="nav-link" id="tab-2" data-toggle="tab" href="#tab-content-2">#}
+{#                            <span>Projects</span>#}
+{#                        </a>#}
+{#                    </li>#}
+{#                    <li class="nav-item">#}
+{#                        <a role="tab" class="nav-link" id="tab-3" data-toggle="tab" href="#tab-content-3">#}
+{#                            <span>Evolution</span>#}
+{#                        </a>#}
+{#                    </li>#}
+{#                 </ul>#}
+
+                <div class="tab-content tabs-animation fade active" id="tab-content-0" role="tabpanel">
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tab-content-0" role="tabpanel"><p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                                software like Aldus PageMaker
+                                including versions of Lorem Ipsum.</p>
+                            </div>
+                        </div>
+                    <div class="tab-pane tabs-animation fade" id="tab-content-1" role="tabpanel">
+                        <div class="tab-content">
+                            <div class="tab-pane" id="tab-content-1" role="tabpanel"><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                when an unknown printer took a
+                                galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane tabs-animation fade" id="tab-content-2" role="tabpanel">
+                        <div class="tab-content">
+                            <div class="tab-pane" id="tab-content-2" role="tabpanel"><p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
+                                type specimen book. It has
+                                survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+{#                                #}
+{#                                <div class="row">#}
+{#                                    <div class="col-md-6">#}
+{#                                        <div class="main-card mb-3 card">#}
+{#                                            <div class="card-body"><h5 class="card-title">Basic</h5>#}
+{#                                                <ul class="nav nav-tabs">#}
+{#                                                    <li class="nav-item"><a data-toggle="tab" href="#tab-eg10-0" class="active nav-link">Tab 1</a></li>#}
+{#                                                    <li class="nav-item"><a data-toggle="tab" href="#tab-eg10-1" class="nav-link">Tab 2</a></li>#}
+{#                                                    <li class="nav-item"><a data-toggle="tab" href="#tab-eg10-2" class="nav-link">Tab 3</a></li>#}
+{#                                                </ul>#}
+{#                                                <div class="tab-content">#}
+{#                                                    <div class="tab-pane active" id="tab-eg10-0" role="tabpanel"><p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing#}
+{#                                                        software like Aldus PageMaker#}
+{#                                                        including versions of Lorem Ipsum.</p></div>#}
+{#                                                    <div class="tab-pane" id="tab-eg10-1" role="tabpanel"><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,#}
+{#                                                        when an unknown printer took a#}
+{#                                                        galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p></div>#}
+{#                                                    <div class="tab-pane" id="tab-eg10-2" role="tabpanel"><p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a#}
+{#                                                        type specimen book. It has#}
+{#                                                        survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p></div>#}
+{#                                                </div>#}
+{#                                            </div>#}
+{#                                        </div>#}
+{#                                    </div>#}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+<script type="text/javascript" src="../assets/scripts/main.js"></script>
+</body>
+
+</html>

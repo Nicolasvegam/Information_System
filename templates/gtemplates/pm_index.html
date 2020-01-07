@@ -1,0 +1,844 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+    <meta name="description" content="Tabs are used to split content between multiple sections. Wide variety available.">
+    <meta name="msapplication-tap-highlight" content="no">
+    <link href="static/css2/style.css" rel="stylesheet">
+    <title>TERA - PM</title>
+    <!--
+    =========================================================
+    * ArchitectUI HTML Theme Dashboard - v1.0.0
+    =========================================================
+    * Product Page: https://dashboardpack.com
+    * Copyright 2019 DashboardPack (https://dashboardpack.com)
+    * Licensed under MIT (https://github.com/DashboardPack/architectui-html-theme-free/blob/master/LICENSE)
+    =========================================================
+    * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+    -->
+
+<!--            Edited in 09/12/2019            -->
+
+
+<link href="static/css2/main.css" rel="stylesheet">
+
+<style>
+body {margin: 10px 20px;}
+
+* {box-sizing: border-box}
+
+</style>
+
+
+</head>
+
+
+<body>
+
+<!--TERA LOGO-->
+<div class="container-fluid">
+    <a class="navbar-brand" href="#" ><img src="static/img/logo2.png" alt="TERA"></a>
+    <a class="navbar-brand float-right mm-active vertical-nav-menu"style="padding: 5px" href="pm_worker_index.html">Worker Page</a>
+</div>
+<!-- -->
+
+<div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
+
+    <div class="app-main">
+         <!--<ul class="tab-content" style="background-color: #0e071ed6">
+             <div class="tab-pane active " id="tab-eg10-0" role="tabpanel" style="color: white">
+                 <h3 style="padding-top: 5%">Marco Veneto</h3>
+                 <h1> </h1>
+                 <h1> </h1>
+                 <img src="../img/profile_pic_marco.png" alt="profile" class="center" style="width: 60%; padding-top: 10%">
+                 <h5>Overall 76</h5>
+                 <div class="row">
+                    <div class="col-lg-6" style="padding-left: 20%; padding-right: 18%">
+                        <div class="main-card mb-3 card">
+                            <div class="card-body" style="color: #0c0b0f"><h5 class="card-title">Top 4 competences</h5>
+                                <table class="mb-0 table table-borderless">
+                                    <thead></thead>
+                                    <tbody>
+                                    <tr>
+                                        <td><b>88</b> Mach</td>
+                                        <td><b>81</b> CNC</td>
+                                    </tr>
+                                    <tr><td><b>71</b> Com</td>
+                                        <td><b>54</b> Lead</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+                 <h6>Project Manager</h6>
+                 <h6>Project: Blue Torino</h6>
+             </div>
+         </ul> -->
+
+        <div class="app-main__outer">
+            <ul class="nav nav-tabs tabs-animated ">
+                <li class="nav-item"><a data-toggle="tab" href="#tab-content-0" class="active nav-link">Current Projects</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#tab-content-1" class="nav-link">New Project</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#tab-content-3" class="nav-link">Past Projects</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#tab-content-2" class="nav-link">Workers</a></li>
+            </ul>
+            <div class="tab-content" >
+                <div class="tab-pane active" id="tab-content-0" role="tabpanel">
+
+
+                    <!-- Current Projects -->
+
+                    <div class="card-body" style="padding: 0">
+                        <h2>Projects</h2>
+                        <div class="row">
+                        <div class="col-lg-6">
+                            <div class="main-card mb-3 card">
+                                <div class="card-body">
+                                    <table class="mb-0 table table-hover">
+                                        <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Name of the project</th>
+                                            <th>Start date</th>
+                                            <th>Number of workers</th>
+                                            <th>Manage project</th>
+                                            <th>Evaluate team</th>
+                                            <th>Finish Project</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>Blue Torino</td>
+                                            <td>01/04/2015</td>
+                                            <td>142</td>
+                                            <td class="text-center">
+                                                <button type="button" class="btn mr-2 mb-2 btn-success" data-toggle="modal" data-target=".btn_manage_project">MANAGE</button>
+                                            </td>
+                                            <td class="text-center">
+                                                <button type="button" class="btn mr-2 mb-2 btn-warning" data-toggle="modal" data-target=".bd-example-modal-lg">EVALUATE</button>
+                                            </td>
+                                            <td class="text-center">
+                                                <button type="button" class="btn mr-2 mb-2 btn-danger" data-toggle="modal" data-target=".bd-example-modal-lg">FINISH</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2</th>
+                                            <td>ALpine A110</td>
+                                            <td>10/05/2017</td>
+                                            <td>98</td>
+                                            <td class="text-center">
+                                                <button type="button" class="btn mr-2 mb-2 btn-success" data-toggle="modal" data-target=".btn_manage_project">MANAGE</button>
+                                            </td>
+                                            <td class="text-center">
+                                                <button type="button" class="btn mr-2 mb-2 btn-warning" data-toggle="modal" data-target=".bd-example-modal-lg">EVALUATE</button>
+                                            </td>
+                                            <td class="text-center">
+                                                <button type="button" class="btn mr-2 mb-2 btn-danger" data-toggle="modal" data-target=".bd-example-modal-lg">FINISH</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">3</th>
+                                            <td>Aston Martin DB11</td>
+                                            <td>31/10/2018</td>
+                                            <td>72</td>
+                                            <td class="text-center">
+                                                <button type="button" class="btn mr-2 mb-2 btn-success" data-toggle="modal" data-target=".btn_manage_project">MANAGE</button>
+                                            </td>
+                                            <td class="text-center">
+                                                <button type="button" class="btn mr-2 mb-2 btn-warning" data-toggle="modal" data-target=".bd-example-modal-lg">EVALUATE</button>
+                                            </td>
+                                            <td class="text-center">
+                                                <button type="button" class="btn mr-2 mb-2 btn-danger" data-toggle="modal" data-target=".bd-example-modal-lg">FINISH</button>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- end -->
+
+
+                </div>
+                <div class="tab-pane" id="tab-content-1" role="tabpanel">
+
+                    <!-- New Projects -->
+                    <div class="main-card mb-3 card">
+                        <h2>New Project</h2>
+                        <div class="card-body">
+                            <div class="row">
+                               <div class="position-relative row form-group" style="width: 100%"><label for="worker_hr_name" class="col-sm-2 col-form-label" style="flex: 9%; max-width: 9%; padding-top: 2%">Name</label>
+                                    <div class="col-sm-10" style="flex: 81%; max-width: 100%"><input name="Name" id="worker_hr_name" placeholder="Name of the Project" type="text" class="form-control"></div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 col-lg-6" style="max-width: 50%">
+                                    <form class="">
+                                        <div class="position-relative row form-group" style="width: 100%"><label for="start_date_proj" class="col-form-label" style="width: 40%; padding-top:25px">Starting Date</label>
+                                            <div class="col-sm-10" style="width: 60%; flex: 60%"><input name="Plant" id="start_date_proj" class="form-control" placeholder="Start date" type="date" style="max-width: 100%"></div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-md-12 col-lg-6" style="max-width: 50%">
+                                    <form class="">
+                                        <div class="position-relative row form-group" style="width: 100%"><label for="finish_date_proj" class="col-form-label" style="width: 40%; padding-top:25px;">Finishing Date</label>
+                                            <div class="col-sm-10" style="width: 60%;flex: 60%"><input name="Plant" id="finish_date_proj" class="form-control" placeholder="Finish date" type="date" style="max-width: 100%"></div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                             <div class="col-md-12 col-lg-6" style="width: 100%">
+                                <div class="position-relative form-group col-md-12" ><label for="new_proj_description" class="">Description</label><textarea id="new_proj_description" placeholder="Insert a brief description of this new project" type="text" class="form-control" rows="4"></textarea></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 col-lg-6" style="max-width: 50%">
+                                    <form class="" style="max-width: 70%"><label for="proj_skills_need" class="">Skills Needed</label>
+                                        <div class="position-relative row form-group">
+                                            <div class="col-sm-10" style="flex: 20%"><select name="skillneeded" id="proj_skills_need" class="form-control"></select></div>
+                                            <div class="" style="width: 15%; padding-top: 16px"><input name="qt" id="proj_skills_need" placeholder="Qt." type="Number" class="form-control"></div>
+                                        </div>
+                                        <div class="position-relative row form-group">
+                                            <div class="col-sm-10" style="flex: 20%"><select name="skillneeded" id="proj_skills_need" class="form-control"></select></div>
+                                            <div class="" style="width: 15%; padding-top: 16px"><input name="qt" id="proj_skills_need" placeholder="Qt." type="Number" class="form-control"></div>
+                                        </div>
+                                        <div class="position-relative row form-group">
+                                            <div class="col-sm-10" style="flex: 20%"><select name="skillneeded" id="proj_skills_need" class="form-control"></select></div>
+                                            <div class="" style="width: 15%; padding-top: 16px"><input name="qt" id="proj_skills_need" placeholder="Qt." type="Number" class="form-control"></div>
+                                        </div>
+                                        <div class="position-relative row form-group">
+                                            <div class="col-sm-10" style="flex: 20%"><select name="skillneeded" id="proj_skills_need" class="form-control"></select></div>
+                                            <div class="" style="width: 15%; padding-top: 16px"><input name="qt" id="proj_skills_need" placeholder="Qt." type="Number" class="form-control"></div>
+                                        </div>
+                                        <div class="position-relative row form-group">
+                                            <div class="col-sm-10" style="flex: 20%"><select name="skillneeded" id="proj_skills_need" class="form-control"></select></div>
+                                            <div class="" style="width: 15%; padding-top: 16px"><input name="qt" id="proj_skills_need" placeholder="Qt." type="Number" class="form-control"></div>
+                                        </div>
+                                        <div class="position-relative row form-group">
+                                            <div class="col-sm-10" style="flex: 20%"><select name="skillneeded" id="proj_skills_need" class="form-control"></select></div>
+                                            <div class="" style="width: 15%; padding-top: 16px"><input name="qt" id="proj_skills_need" placeholder="Qt." type="Number" class="form-control"></div>
+                                        </div>
+                                        <div class="position-relative row form-group">
+                                            <div class="col-sm-10" style="flex: 20%"><select name="skillneeded" id="proj_skills_need" class="form-control"></select></div>
+                                            <div class="" style="width: 15%; padding-top: 16px"><input name="qt" id="proj_skills_need" placeholder="Qt." type="Number" class="form-control"></div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-md-12 col-lg-6" style="max-width: 50%">
+                                    <form class="">
+                                        <div class=""><h5 class="card-title">TEAM</h5>
+                                            <table class="mb-0 table table-hover">
+                                                <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Name</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <th scope="row">1</th>
+                                                    <td>Antonio Luis</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2</th>
+                                                    <td>Jose Luis</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">3</th>
+                                                    <td>Tersa Matos</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">4</th>
+                                                    <td>Nicolas</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">5</th>
+                                                    <td>Gustavo Resende</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">6</th>
+                                                    <td>Juan Pablo</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                            <div class="col-md-12 col-lg-6" >
+                                                <div class="position-relative row form-check" >
+                                                    <div class="col-sm-10 offset-sm-2" style="padding: 0">
+                                                        <button type="button" class="btn mr-2 mb-2 btn-secondary" data-toggle="modal" data-target=".btn_manage_team">Manage Team</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <div class="divider"></div>
+                                    <div class="col-md-12 col-lg-6" >
+                                        <div class="position-relative row form-check" >
+                                            <div class="col-sm-10 offset-sm-2" style="padding: 0">
+                                                <button type="button" class="btn mr-2 mb-2 btn-primary" data-toggle="modal" data-target=".btn_add_worker">Create Project</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end -->
+
+
+                </div>
+                <div class="tab-pane" id="tab-content-3" role="tabpanel">
+
+
+                    <!-- Past Projects -->
+                    <div class="card-body" style="padding: 0">
+                        <h2> Past Projects</h2>
+                        <div class="row">
+                           <div class="position-relative row form-group" style="width: 100%"><label for="worker_hr_name" class="col-sm-2 col-form-label" style="flex: 9%; max-width: 9%; padding-top: 2%">Name</label>
+                               <div class="col-sm-10" style="flex: 81%; max-width: 100%"><select name="Name" id="worker_hr_name"  type="text" class="form-control"></select></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 col-lg-6" style="max-width: 33.3%">
+                                <form class="">
+                                    <div class="position-relative row form-group" style="width: 100%"><label for="start_date_proj" class="col-form-label" style="width: 40%; padding-top:25px">From</label>
+                                        <div class="col-sm-10" style="width: 60%; flex: 60%"><input name="Plant" id="start_date_proj" class="form-control" placeholder="Start date" type="date" style="max-width: 100%"></div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-md-12 col-lg-6" style="max-width: 33.3%">
+                                <form class="">
+                                    <div class="position-relative row form-group" style="width: 100%"><label for="finish_date_proj" class="col-form-label" style="width: 40%; padding-top:25px;">to</label>
+                                        <div class="col-sm-10" style="width: 60%;flex: 60%"><input name="Plant" id="finish_date_proj" class="form-control" placeholder="Finish date" type="date" style="max-width: 100%"></div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-md-12 col-lg-6" style="max-width: 33.3%; padding-top: 16px">
+                                <form class="" style="padding: 5%">
+                                    <button type="button" class="btn mr-2 mb-2 btn-primary" style="width: 25%;">Filter</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="row">
+                        <div class="col-lg-6">
+                            <div class="main-card mb-3 card">
+                                <div class="card-body">
+                                    <table class="mb-0 table table-hover">
+                                        <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Name of the project</th>
+                                            <th>Start date</th>
+                                            <th>Finish date</th>
+                                            <th>Number of workers</th>
+                                            <th>View report</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>Blue Torino</td>
+                                            <td>01/04/2015</td>
+                                            <td>02/08/2018</td>
+                                            <td>142</td>
+                                            <td class="text-center">
+                                                <button type="button" class="btn mr-2 mb-2 btn-secondary" data-toggle="modal" data-target=".btn_manage_project">REPORT</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2</th>
+                                            <td>ALpine A110</td>
+                                            <td>10/05/2017</td>
+                                            <td>31/11/2018</td>
+                                            <td>98</td>
+                                            <td class="text-center">
+                                                <button type="button" class="btn mr-2 mb-2 btn-secondary" data-toggle="modal" data-target=".btn_manage_project">REPORT</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">3</th>
+                                            <td>Aston Martin DB11</td>
+                                            <td>31/10/2018</td>
+                                            <td>02/12/2019</td>
+                                            <td>72</td>
+                                           <td class="text-center">
+                                                <button type="button" class="btn mr-2 mb-2 btn-secondary" data-toggle="modal" data-target=".btn_manage_project">REPORT</button>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <!-- end -->
+
+
+                </div>
+                <div class="tab-pane" id="tab-content-2" role="tabpanel">
+
+
+                    <!-- Workers -->
+                    <div class="card-body" style="padding: 0">
+                        <div class="position-relative row form-group" ><label for="worker_hr_name" class="col-sm-2 col-form-label" style="flex: 9%; max-width: 9%">Name</label>
+                            <div class="col-sm-10" style="flex: 81%; max-width: 100%"><input name="Name" id="worker_hr_name" placeholder="Woker's name" type="text" class="form-control"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 col-lg-6" style="max-width: 50%">
+                                <form class="">
+                                    <div class="position-relative row form-group"><label for="exampleSelect" class="col-sm-2 col-form-label">Plant</label>
+                                        <div class="col-sm-10"><select name="Plant" id="worker_hr_plant" class="form-control"></select></div>
+                                    </div>
+                                    <div class="position-relative row form-group"><label for="exampleSelect" class="col-sm-2 col-form-label">Project</label>
+                                        <div class="col-sm-10"><select name="Project" id="worker_hr_project"class="form-control"></select></div>
+                                    </div>
+                                </form>
+                            </div>
+                             <div class="col-md-12 col-lg-6" style="max-width: 50%">
+                                <form class="">
+                                    <div class="position-relative row form-group"><label for="exampleSelect" class="col-sm-2 col-form-label">Position</label>
+                                        <div class="col-sm-10"><select name="Position" id="worker_hr_position" class="form-control"></select></div>
+                                    </div>
+                                    <div class="position-relative row form-group"><label for="worker_hr_minavg" class="col-sm-2 col-form-label">Minimum Average</label>
+                                        <div class="col-sm-10"><input name="MinAvg" id="worker_hr_minavg" placeholder="Minimum Global Average" type="Number" class="form-control"></div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="position-relative row form-check" style="width: 100%">
+                            <div class="">
+                                <button class="btn btn-primary" style="width: 10%">Filter</button>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="main-card mb-3 card">
+                                    <div class="card-body"><h5 class="card-title">Workers</h5>
+                                        <table class="mb-0 table table-hover">
+                                            <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Name</th>
+                                                <th>Position</th>
+                                                <th>Birth Date</th>
+                                                <th>Current Project</th>
+                                                <th>Average score</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td>Antonio Luis</td>
+                                                <td>Project Manager</td>
+                                                <td>01/04/1975</td>
+                                                <td>Blue Torino</td>
+                                                <td>91</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">2</th>
+                                                <td>Jose Luis</td>
+                                                <td>Factory worker</td>
+                                                <td>10/04/1975</td>
+                                                <td>Alpine A110</td>
+                                                <td>62</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- end -->
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="static/js2/main.js"></script>
+</body>
+
+</html>
+
+<!-- Large modals -->
+
+<div class="modal fade btn_manage_project" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Manage Project</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="main-card mb-3 card">
+                    <div class="card-body">
+                        <div class="row">
+                           <div class="position-relative row form-group" style="width: 100%"><label for="worker_hr_name" class="col-sm-2 col-form-label" style="flex: 9%; max-width: 9%; padding-top: 2%">Name</label>
+                                <div class="col-sm-10" style="flex: 81%; max-width: 100%"><input name="Name" id="worker_hr_name" placeholder="Name of the Project" type="text" class="form-control"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 col-lg-6" style="max-width: 50%">
+                                <form class="">
+                                    <div class="position-relative row form-group" style="width: 100%"><label for="start_date_proj" class="col-form-label" style="width: 40%; padding-top:25px">Starting Date</label>
+                                        <div class="col-sm-10" style="width: 60%; flex: 60%"><input name="Plant" id="start_date_proj" class="form-control" placeholder="Start date" type="date" style="max-width: 100%"></div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-md-12 col-lg-6" style="max-width: 50%">
+                                <form class="">
+                                    <div class="position-relative row form-group" style="width: 100%"><label for="finish_date_proj" class="col-form-label" style="width: 40%; padding-top:25px;">Finishing Date</label>
+                                        <div class="col-sm-10" style="width: 60%;flex: 60%"><input name="Plant" id="finish_date_proj" class="form-control" placeholder="Finish date" type="date" style="max-width: 100%"></div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                         <div class="col-md-12 col-lg-6" style="width: 100%">
+                            <div class="position-relative form-group col-md-12" ><label for="new_proj_description" class="">Description</label><textarea id="new_proj_description" placeholder="Insert a brief description of this new project" type="text" class="form-control" rows="4"></textarea></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 col-lg-6" style="max-width: 50%">
+                                <form class="" style="max-width: 80%"><label for="proj_skills_need" class="">Skills Needed</label>
+                                    <div class="position-relative row form-group">
+                                        <div class="col-sm-10" style="flex: 20%"><select name="skillneeded" id="proj_skills_need" class="form-control"></select></div>
+                                        <div class="" style="width: 15%; padding-top: 16px"><input name="qt" id="proj_skills_need" placeholder="Qt." type="Number" class="form-control"></div>
+                                    </div>
+                                    <div class="position-relative row form-group">
+                                        <div class="col-sm-10" style="flex: 20%"><select name="skillneeded" id="proj_skills_need" class="form-control"></select></div>
+                                        <div class="" style="width: 15%; padding-top: 16px"><input name="qt" id="proj_skills_need" placeholder="Qt." type="Number" class="form-control"></div>
+                                    </div>
+                                    <div class="position-relative row form-group">
+                                        <div class="col-sm-10" style="flex: 20%"><select name="skillneeded" id="proj_skills_need" class="form-control"></select></div>
+                                        <div class="" style="width: 15%; padding-top: 16px"><input name="qt" id="proj_skills_need" placeholder="Qt." type="Number" class="form-control"></div>
+                                    </div>
+                                    <div class="position-relative row form-group">
+                                        <div class="col-sm-10" style="flex: 20%"><select name="skillneeded" id="proj_skills_need" class="form-control"></select></div>
+                                        <div class="" style="width: 15%; padding-top: 16px"><input name="qt" id="proj_skills_need" placeholder="Qt." type="Number" class="form-control"></div>
+                                    </div>
+                                    <div class="position-relative row form-group">
+                                        <div class="col-sm-10" style="flex: 20%"><select name="skillneeded" id="proj_skills_need" class="form-control"></select></div>
+                                        <div class="" style="width: 15%; padding-top: 16px"><input name="qt" id="proj_skills_need" placeholder="Qt." type="Number" class="form-control"></div>
+                                    </div>
+                                    <div class="position-relative row form-group">
+                                        <div class="col-sm-10" style="flex: 20%"><select name="skillneeded" id="proj_skills_need" class="form-control"></select></div>
+                                        <div class="" style="width: 15%; padding-top: 16px"><input name="qt" id="proj_skills_need" placeholder="Qt." type="Number" class="form-control"></div>
+                                    </div>
+                                    <div class="position-relative row form-group">
+                                        <div class="col-sm-10" style="flex: 20%"><select name="skillneeded" id="proj_skills_need" class="form-control"></select></div>
+                                        <div class="" style="width: 15%; padding-top: 16px"><input name="qt" id="proj_skills_need" placeholder="Qt." type="Number" class="form-control"></div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-md-12 col-lg-6" style="max-width: 50%">
+                                <form class="">
+                                    <div class=""><h5 class="card-title">TEAM</h5>
+                                        <table class="mb-0 table table-hover">
+                                            <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Name</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td>Antonio Luis</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">2</th>
+                                                <td>Jose Luis</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td>Tersa Matos</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">4</th>
+                                                <td>Nicolas</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">5</th>
+                                                <td>Gustavo Resende</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">6</th>
+                                                <td>Juan Pablo</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="col-md-12 col-lg-6" >
+                                            <div class="position-relative row form-check" >
+                                                <div class="col-sm-10 offset-sm-2" style="padding: 0">
+                                                    <button type="button" class="btn mr-2 mb-2 btn-secondary" data-toggle="modal" data-target=".btn_manage_team">Manage Team</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade btn_manage_team" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Manage Team</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="tab-content">
+                    <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
+                        <div class="main-card mb-3 card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-12 col-lg-6" style="max-width: 50%">
+                                        <form class="">
+                                            <div class=""><h5 class="card-title">Final Team</h5>
+                                                <table class="mb-0 table table-hover">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>ID</th>
+                                                        <th>Name</th>
+                                                        <th>Speciality</th>
+                                                        <th>Remove</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <th scope="row">1</th>
+                                                        <td>Antonio Luis</td>
+                                                        <td>CNC</td>
+                                                        <td class="text-center">
+                                                            <button type="button" class="btn mr-2 mb-2 btn-danger" data-toggle="modal" data-target=".bd-example-modal-lg">DELETE</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">2</th>
+                                                        <td>Jose Luis</td>
+                                                        <td>Coach Building</td>
+                                                        <td class="text-center">
+                                                            <button type="button" class="btn mr-2 mb-2 btn-danger" data-toggle="modal" data-target=".bd-example-modal-lg">DELETE</button>
+                                                        </td>
+                                                    </tr>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">3</th>
+                                                        <td>Tersa Matos</td>
+                                                        <td>Machinary Operating</td>
+                                                        <td class="text-center">
+                                                            <button type="button" class="btn mr-2 mb-2 btn-danger" data-toggle="modal" data-target=".bd-example-modal-lg">DELETE</button>
+                                                        </td>
+                                                    </tr>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">4</th>
+                                                        <td>Nicolas Maduro</td>
+                                                        <td>Machining</td>
+                                                        <td class="text-center">
+                                                            <button type="button" class="btn mr-2 mb-2 btn-danger" data-toggle="modal" data-target=".bd-example-modal-lg">DELETE</button>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <th scope="row">5</th>
+                                                        <td>Gustavo Resende</td>
+                                                        <td>CAD</td>
+                                                        <td class="text-center">
+                                                            <button type="button" class="btn mr-2 mb-2 btn-danger" data-toggle="modal" data-target=".bd-example-modal-lg">DELETE</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">6</th>
+                                                        <td>Juan Pablo</td>
+                                                        <td>Powertrain</td>
+                                                        <td class="text-center">
+                                                            <button type="button" class="btn mr-2 mb-2 btn-danger" data-toggle="modal" data-target=".bd-example-modal-lg">DELETE</button>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="col-md-12 col-lg-6" style="max-width: 50%">
+                                        <form class="" style="max-width: 70%">
+                                            <div class=""><h5 class="card-title">Available Workers</h5>
+                                                <table class="mb-0 table table-hover">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>ID</th>
+                                                        <th>Name</th>
+                                                        <th>Speciality</th>
+                                                        <th>Remove</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <th scope="row">1</th>
+                                                        <td>Antonio Luis</td>
+                                                        <td>CNC</td>
+                                                        <td class="text-center">
+                                                            <button type="button" class="btn mr-2 mb-2 btn-success" data-toggle="modal" data-target=".bd-example-modal-lg">INSERT</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">2</th>
+                                                        <td>Jose Luis</td>
+                                                        <td>Coach Building</td>
+                                                        <td class="text-center">
+                                                            <button type="button" class="btn mr-2 mb-2 btn-success" data-toggle="modal" data-target=".bd-example-modal-lg">INSERT</button>
+                                                        </td>
+                                                    </tr>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">3</th>
+                                                        <td>Tersa Matos</td>
+                                                        <td>Machinary Operating</td>
+                                                        <td class="text-center">
+                                                            <button type="button" class="btn mr-2 mb-2 btn-success" data-toggle="modal" data-target=".bd-example-modal-lg">INSERT</button>
+                                                        </td>
+                                                    </tr>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">4</th>
+                                                        <td>Nicolas Maduro</td>
+                                                        <td>Machining</td>
+                                                        <td class="text-center">
+                                                            <button type="button" class="btn mr-2 mb-2 btn-success" data-toggle="modal" data-target=".bd-example-modal-lg">INSERT</button>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <th scope="row">5</th>
+                                                        <td>Gustavo Resende</td>
+                                                        <td>CAD</td>
+                                                        <td class="text-center">
+                                                            <button type="button" class="btn mr-2 mb-2 btn-success" data-toggle="modal" data-target=".bd-example-modal-lg">INSERT</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">6</th>
+                                                        <td>Juan Pablo</td>
+                                                        <td>Powertrain</td>
+                                                        <td class="text-center">
+                                                            <button type="button" class="btn mr-2 mb-2 btn-success" data-toggle="modal" data-target=".bd-example-modal-lg">INSERT</button>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade btn_new_soft_skill" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Create New Soft Skill</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+               <div class="main-card mb-3 card">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="card-body">
+                                <form class="">
+                                    <div class="form-row">
+                                        <div class="position-relative form-group col-md-12"><label for="exNewSSName" class="">Name</label><input name="NSS_name" id="exNewSSName" placeholder="Insert the new soft skill" type="text" class="form-control"></div>
+                                        <div class="position-relative form-group col-md-12"><label for="exNewSSDescription" class="">Description</label><textarea id="exNewSSDescription" placeholder="Insert a brief description of this new soft skill" type="text" class="form-control" rows="4"></textarea></div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Add Soft Skill</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade btn_new_hard_skill" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Create New Hard Skill</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+               <div class="main-card mb-3 card">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="card-body">
+                                <form class="">
+                                    <div class="form-row">
+                                        <div class="position-relative form-group col-md-12"><label for="exNewHSName" class="">Name</label><input name="NHS_name" id="exNewHSName" placeholder="Insert the new hard skill" type="text" class="form-control"></div>
+                                        <div class="position-relative form-group col-md-12"><label for="exNewHSDescription" class="">Description</label><textarea id="exNewHSDescription" placeholder="Insert a brief description of this new hard skill" type="text" class="form-control" rows="4"></textarea></div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Add Hard Skill</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- end -->
