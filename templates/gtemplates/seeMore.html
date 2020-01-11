@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+    <meta name="description" content="Tabs are used to split content between multiple sections. Wide variety available.">
+    <meta name="msapplication-tap-highlight" content="no">
+    <link href="static/css2/style.css" rel="stylesheet">
+    <title>TERA - Worker</title>
+    <!--
+    =========================================================
+    * ArchitectUI HTML Theme Dashboard - v1.0.0
+    =========================================================
+    * Product Page: https://dashboardpack.com
+    * Copyright 2019 DashboardPack (https://dashboardpack.com)
+    * Licensed under MIT (https://github.com/DashboardPack/architectui-html-theme-free/blob/master/LICENSE)
+    =========================================================
+    * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+    -->
+
+<!--            Edited in 09/12/2019            -->
+
+
+<link href="static/css2/main.css" rel="stylesheet">
+
+<style>
+body {margin: 10px 20px;}
+
+* {box-sizing: border-box}
+
+</style>
+
+
+</head>
+
+
+<body>
+
+<!--TERA LOGO-->
+<div class="container-fluid">
+    <a class="navbar-brand" href="home" ><img src="static/img/logo2.png" alt="TERA"></a>
+    <a href="workerProfile"> <button type="button" style="float: right;" class="btn mr-2 mb-2 btn-warning" >Worker Mood</button> </a>
+    <a href="logout"> <button type="button" style="float: right;" class="btn mr-2 mb-2 btn-warning" >Logout</button> </a>
+
+</div>
+<!---->
+<div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
+
+    <div class="app-main">
+         <ul class="tab-content" style="background-color: #0e071ed6">
+             <div class="tab-pane active " id="tab-eg10-0" role="tabpanel" style="color: white">
+
+             </div>
+         </ul>
+
+        <div class="app-main__outer">
+            <ul class="nav nav-tabs tabs-animated ">
+                <li class="nav-item"><a data-toggle="tab" href="#tab-content-0" class="active nav-link"> Report details</a></li>
+            </ul>
+            <div class="tab-content" >
+                <div class="tab-pane active" id="tab-content-0" role="tabpanel">
+
+
+                  <!-- Workers -->
+                  <div class="card-body" style="padding: 0">
+
+                      <div class="divider"></div>
+                      <div class="row">
+                          <div class="col-lg-6">
+                              <div class="main-card mb-3 card">
+                                  <div class="card-body"><h5 class="card-title">Workers</h5>
+                                      <table class="mb-0 table table-hover">
+                                          <thead>
+                                          <tr>
+                                              <th>ID</th>
+                                              <th>Evaluator</th>
+                                              <th>Evaluated</th>
+                                              <th>Date</th>
+                                          </tr>
+                                          </thead>
+                                          <tbody>
+                                          {% for i in range(0, len) %}
+                                          <tr>
+                                            <th scope="row">{{ev[i][1].id}}</th>
+                                              <td>{{ev[i][2].name}}</td>
+                                              <td>{{ev[i][4]}}</td>
+                                              <td>{{ev[i][1].date}}</td>
+                                          </tr>
+
+                                          {% endfor %}
+                                          </tbody>
+                                      </table>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- end -->
+              </div>
+            </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="static/js2/main.js"></script>
+</body>
+
+</html>

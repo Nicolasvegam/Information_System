@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+    <meta name="description" content="Tabs are used to split content between multiple sections. Wide variety available.">
+    <meta name="msapplication-tap-highlight" content="no">
+    <link href="static/css2/style.css" rel="stylesheet">
+    <title>TERA - Worker</title>
+    <!--
+    =========================================================
+    * ArchitectUI HTML Theme Dashboard - v1.0.0
+    =========================================================
+    * Product Page: https://dashboardpack.com
+    * Copyright 2019 DashboardPack (https://dashboardpack.com)
+    * Licensed under MIT (https://github.com/DashboardPack/architectui-html-theme-free/blob/master/LICENSE)
+    =========================================================
+    * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+    -->
+
+<!--            Edited in 09/12/2019            -->
+
+
+<link href="static/css2/main.css" rel="stylesheet">
+
+<style>
+body {margin: 10px 20px;}
+
+* {box-sizing: border-box}
+
+</style>
+
+
+</head>
+
+
+<body>
+
+<!--TERA LOGO-->
+<div class="container-fluid">
+    <a class="navbar-brand" href="home" ><img src="static/img/logo2.png" alt="TERA"></a>
+    <a href="workerProfile"> <button type="button" style="float: right;" class="btn mr-2 mb-2 btn-warning" >Worker Mood</button> </a>
+    <a href="logout"> <button type="button" style="float: right;" class="btn mr-2 mb-2 btn-warning" >Logout</button> </a>
+
+</div>
+<!---->
+<div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
+
+    <div class="app-main">
+         <ul class="tab-content" style="background-color: #0e071ed6">
+             <div class="tab-pane active " id="tab-eg10-0" role="tabpanel" style="color: white">
+                 <h3 style="padding-top: 5%">  {{user.name}} </h3>
+                 <h1> </h1>
+                 <h1> </h1>
+                 <img src="static/img/profile_pic_marco.png" alt="profile" class="center" style="width: 60%; padding-top: 10%">
+                 <h5>Overall {{average}}</h5>
+                 <div class="row">
+                    <div class="col-lg-6" style="padding-left: 20%; padding-right: 18%">
+                        <div class="main-card mb-3 card">
+                            <div class="card-body" style="color: #0c0b0f"><h5 class="card-title">Top 4 competences</h5>
+                                <table class="mb-0 table table-borderless">
+                                    <thead></thead>
+                                    <tbody>
+                                    <tr>
+                                        <td><b>{{top_4[0][3].score}}</b> {{top_4[0][2].short_name}}</td>
+                                        <td><b>{{top_4[1][3].score}}</b> {{top_4[1][2].short_name}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>{{top_4[2][3].score}}</b> {{top_4[2][2].short_name}}</td>
+                                        <td><b>{{top_4[3][3].score}}</b> {{top_4[3][2].short_name}}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+                 <h6>{{role[1].name}}</h6>
+                 <h6>Project: {{project[1].name}}</h6>
+             </div>
+         </ul>
+
+        <div class="app-main__outer">
+            <ul class="nav nav-tabs tabs-animated ">
+                <li class="nav-item"><a data-toggle="tab" href="#tab-content-0" class="active nav-link">Personal Data</a></li>
+            </ul>
+            <div class="tab-content" >
+                <div class="tab-pane active" id="tab-content-0" role="tabpanel">
+
+
+                  <form action="" method="post" class="form-container">
+                  <div class="modal-body">
+                      <div class="tab-content">
+                          <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
+                              <div class="main-card mb-3 card">
+                                  <div class="col-md-12">
+                                      <div class="row">
+                                          <div class="card-body"><h5 class="card-title">Personal Data</h5>
+                                                  <div class="form-row">
+                                                      <div class="position-relative form-group col-md-12">
+                                                        {{ formReg.name.label }}
+                                                          {{ formReg.name(class='form-control',placeholder='please write his name') }}
+                                                            {% for error in formReg.name.errors %}
+                                                              <div class="alert alert-danger" role="alert">
+                                                                {{ error }}
+                                                              </div>
+                                                          {% endfor %}
+                                                          {{ formReg.hidden_tag() }}
+
+                                                      </div>
+                                                      <div class="position-relative form-group col-md-12">
+                                                        {{ formReg.first_name.label }}
+                                                          {{ formReg.first_name(class='form-control',placeholder='please write his first name') }}
+                                                            {% for error in formReg.first_name.errors %}
+                                                              <div class="alert alert-danger" role="alert">
+                                                                {{ error }}
+                                                              </div>
+                                                          {% endfor %}
+                                                          {{ formReg.hidden_tag() }}
+
+                                                      </div>
+                                                      <div class="col-md-6">
+                                                          <div class="position-relative form-group">
+                                                            {{ formReg.surename.label }}
+                                                              {{ formReg.surename(class='form-control') }}
+                                                                {% for error in formReg.surename.errors %}
+                                                                  <div class="alert alert-danger" role="alert">
+                                                                    {{ error }}
+                                                                  </div>
+                                                              {% endfor %}
+                                                              {{ formReg.hidden_tag() }}
+
+                                                          </div>
+                                                      </div>
+                                                      <div class="col-md-6">
+                                                          <div class="position-relative form-group">
+                                                            {{ formReg.date_of_birth.label }}
+                                                              {{ formReg.date_of_birth(class='form-control',placeholder='please write his date of birth') }}
+                                                                {% for error in formReg.date_of_birth.errors %}
+                                                                  <div class="alert alert-danger" role="alert">
+                                                                    {{ error }}
+                                                                  </div>
+                                                              {% endfor %}
+                                                          </div>
+                                                      </div>
+                                                      <div class="col-md-6">
+                                                          <div class="position-relative form-group">
+                                                            {{ formReg.email.label }}
+                                                              {{ formReg.email(class='form-control',placeholder='please write his email') }}
+                                                                {% for error in formReg.email.errors %}
+                                                                  <div class="alert alert-danger" role="alert">
+                                                                    {{ error }}
+                                                                  </div>
+                                                              {% endfor %}
+                                                          </div>
+                                                      </div>
+                                                      <div class="col-md-6">
+                                                          <div class="position-relative form-group">
+                                                            {{ formReg.mobile.label }}
+                                                              {{ formReg.mobile(class='form-control',placeholder='please write his mobile') }}
+                                                                {% for error in formReg.mobile.errors %}
+                                                                  <div class="alert alert-danger" role="alert">
+                                                                    {{ error }}
+                                                                  </div>
+                                                              {% endfor %}
+                                                          </div>
+                                                      </div>
+                                                      <div class="col-md-6">
+                                                          <div class="position-relative form-group">
+                                                            {{ formReg.address.label }}
+                                                              {{ formReg.address(class='form-control',placeholder='please write his address') }}
+                                                                {% for error in formReg.address.errors %}
+                                                                  <div class="alert alert-danger" role="alert">
+                                                                    {{ error }}
+                                                                  </div>
+                                                              {% endfor %}
+                                                          </div>
+                                                      </div>
+                                                      <div class="col-md-6">
+                                                        <div class="position-relative form-group">
+                                                          {{ formReg.starting_date.label }}
+                                                            {{ formReg.starting_date(class='form-control',placeholder='please write his date of start') }}
+                                                              {% for error in formReg.starting_date.errors %}
+                                                                <div class="alert alert-danger" role="alert">
+                                                                  {{ error }}
+                                                                </div>
+                                                            {% endfor %}
+                                                        </div>
+                                                      </div>
+                                                      <div class="col-md-6">
+                                                          <div class="position-relative form-group">
+                                                            {{ formReg.available.label }}
+                                                              {{ formReg.available(class='form-control',placeholder='please write his availability') }}
+                                                                {% for error in formReg.available.errors %}
+                                                                  <div class="alert alert-danger" role="alert">
+                                                                    {{ error }}
+                                                                  </div>
+                                                              {% endfor %}
+                                                          </div>
+                                                      </div>
+                                                      <div class="col-md-6">
+                                                        <div class="position-relative form-group">
+                                                          {{ formReg.wage.label }}
+                                                            {{ formReg.wage(class='form-control',placeholder='please write his wage') }}
+                                                              {% for error in formReg.wage.errors %}
+                                                                <div class="alert alert-danger" role="alert">
+                                                                  {{ error }}
+                                                                </div>
+                                                            {% endfor %}
+                                                        </div>
+                                                      </div>
+                                                      <div class="col-md-6">
+                                                          <div class="position-relative form-group">
+                                                            {{ formReg.username.label }}
+                                                              {{ formReg.username(class='form-control',placeholder='please write your username') }}
+                                                                {% for error in formReg.username.errors %}
+                                                                  <div class="alert alert-danger" role="alert">
+                                                                    {{ error }}
+                                                                  </div>
+                                                              {% endfor %}
+                                                          </div>
+                                                      </div>
+                                                      <div class="col-md-6">
+                                                          <div class="position-relative form-group">
+                                                            {{ formReg.password.label }}
+                                                              {{ formReg.password(class='form-control',placeholder='please write your password') }}
+                                                                {% for error in formReg.password.errors %}
+                                                                  <div class="alert alert-danger" role="alert">
+                                                                    {{ error }}
+                                                                  </div>
+                                                              {% endfor %}
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                          </div>
+                                          <div class="card-body"><h5 class="card-title">Company</h5>
+                                              <div class="form-row">
+                                                  <div class="position-relative form-group col-md-12">
+                                                    {{ formReg.project.label }}
+                                                      {{ formReg.project(class='form-control',placeholder='please write his project') }}
+                                                        {% for error in formReg.project.errors %}
+                                                          <div class="alert alert-danger" role="alert">
+                                                            {{ error }}
+                                                          </div>
+                                                      {% endfor %}
+                                                  </div>
+                                                  <div class="col-md-6">
+                                                      <div class="position-relative form-group">
+                                                        {{ formReg.role.label }}
+                                                          {{ formReg.role(class='form-control',placeholder='please write his role') }}
+                                                            {% for error in formReg.role.errors %}
+                                                              <div class="alert alert-danger" role="alert">
+                                                                {{ error }}
+                                                              </div>
+                                                          {% endfor %}
+                                                      </div>
+                                                  </div>
+                                                  <div class="col-md-6">
+                                                    <div class="position-relative form-group">
+                                                      {{ formReg.plant.label }}
+                                                        {{ formReg.plant(class='form-control',placeholder='please write his plant') }}
+                                                          {% for error in formReg.role.errors %}
+                                                            <div class="alert alert-danger" role="alert">
+                                                              {{ error }}
+                                                            </div>
+                                                        {% endfor %}
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="divider"></div>
+                                  <!-- Workers -->
+                                  <div class="card-body" style="padding: 0">
+                                      <div class="row">
+                                          <div class="col-lg-6">
+                                              <div class="main-card mb-3 card">
+                                                  <div class="card-body"><h5 class="card-title">Skills</h5>
+                                                      <table class="mb-0 table table-hover">
+                                                          <thead>
+                                                          <tr>
+                                                              <th>#</th>
+                                                              <th>Name</th>
+                                                              <th>Average</th>
+                                                          </tr>
+                                                          </thead>
+                                                          <tbody>
+                                                          {% for i in range(0, len_skills) %}
+                                                          <tr>
+                                                            <th scope="row">{{i+1}}</th>
+                                                              <td>{{skills[i][1].name}}</td>
+                                                              <td>{{skills[i][2].score}}</td>
+                                                          </tr>
+
+                                                          {% endfor %}
+                                                          </tbody>
+                                                      </table>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <!-- end -->
+                                  <div class="divider"></div>
+                                  <div class="col-md-12">
+                                      <div class="card-body"><h5 class="card-title"> Add or Change Skills</h5>
+                                        <div class="position-relative row form-group" style="flex: 100%">
+                                                      <div class="col-md-10" >
+                                                        {{ formReg.editingSkills(class='form-control',placeholder='please write his competence') }}
+                                                          {% for error in formReg.editingSkills.errors %}
+                                                            <div class="alert alert-danger" role="alert">
+                                                              {{ error }}
+                                                            </div>
+                                                        {% endfor %}
+                                                      </div>
+                                                      <div class="col-md-2" >
+                                                        {{ formReg.editingScore(class='form-control') }}
+                                                          {% for error in formReg.editingScore.errors %}
+                                                            <div class="alert alert-danger" role="alert">
+                                                              {{ error }}
+                                                            </div>
+                                                        {% endfor %}
+                                                      </div>
+                                                  </div>
+
+                                        </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  {{ formReg.submit2(class='btn btn-primary') }}
+                  {{ formReg.hidden_tag() }}
+              </div>
+            </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="static/js2/main.js"></script>
+</body>
+
+</html>

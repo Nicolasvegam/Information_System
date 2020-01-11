@@ -5276,29 +5276,41 @@ a.close.disabled {
 .toast-body {
  padding:.75rem
 }
+
 .modal-open {
- overflow:hidden
+  overflow-y: scroll; !important;
+  overflow-x: scroll; !important;
 }
+
+/*.modal-open {
+ overflow:scroll
+}*/
+
 .modal-open .modal {
- overflow-x:hidden;
- overflow-y:auto
+ overflow-x:scroll;
+ overflow-y:scroll;
 }
+
 .modal {
- position:fixed;
+ position:absolute;
  top:0;
  left:0;
  z-index:1050;
  display:none;
  width:100%;
  height:100%;
- overflow:hidden;
+ overflow:auto;
+ overflow-y: scroll;;
  outline:0
+
 }
 .modal-dialog {
- position:relative;
+ position:absolute;
  width:auto;
  margin:.5rem;
  pointer-events:none
+ overflow-y: scroll;
+
 }
 .modal.fade .modal-dialog {
  transition:transform 0.3s ease-out;
@@ -5323,7 +5335,7 @@ a.close.disabled {
  content:""
 }
 .modal-content {
- position:relative;
+ position:absolute;
  display:flex;
  flex-direction:column;
  width:100%;
@@ -5335,7 +5347,7 @@ a.close.disabled {
  outline:0
 }
 .modal-backdrop {
- position:fixed;
+ position:absolute;
  top:0;
  left:0;
  z-index:1040;
@@ -5366,11 +5378,11 @@ a.close.disabled {
  margin-bottom:0;
  line-height:1.5
 }
-.modal-body {
- position:relative;
+/*.modal-body {
+ position:absolute;
  flex:1 1 auto;
  padding:1rem
-}
+}*/
 .modal-footer {
  display:flex;
  align-items:center;

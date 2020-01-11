@@ -40,47 +40,21 @@ body {margin: 10px 20px;}
 
 <body>
 
+{% block content %}
+
+
 <!--TERA LOGO-->
 <div class="container-fluid">
-    <a class="navbar-brand" href="#" ><img src="static/img/logo2.png" alt="TERA"></a>
-    <a class="navbar-brand float-right mm-active vertical-nav-menu"style="padding: 5px" href="hr_worker_index.html">Worker Page</a>
+    <a class="navbar-brand" href="home" ><img src="static/img/logo2.png" alt="TERA"></a>
+    <a href="workerProfile"> <button type="button" style="float: right;" class="btn mr-2 mb-2 btn-warning" >Worker Mood</button> </a>
+    <a href="logout"> <button type="button" style="float: right;" class="btn mr-2 mb-2 btn-warning" >Logout</button> </a>
+
 </div>
 <!-- -->
 
 <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
 
     <div class="app-main">
-         <!-- <ul class="tab-content" style="background-color: #0e071ed6">
-             <div class="tab-pane active " id="tab-eg10-0" role="tabpanel" style="color: white">
-                 <h3 style="padding-top: 5%">Marco Veneto</h3>
-                 <h1> </h1>
-                 <h1> </h1>
-                 <img src="../img/profile_pic_marco.png" alt="profile" class="center" style="width: 60%; padding-top: 10%">
-                 <h5>Overall 76</h5>
-                 <div class="row">
-                    <div class="col-lg-6" style="padding-left: 20%; padding-right: 18%">
-                        <div class="main-card mb-3 card">
-                            <div class="card-body" style="color: #0c0b0f"><h5 class="card-title">Top 4 competences</h5>
-                                <table class="mb-0 table table-borderless">
-                                    <thead></thead>
-                                    <tbody>
-                                    <tr>
-                                        <td><b>88</b> Mach</td>
-                                        <td><b>81</b> CNC</td>
-                                    </tr>
-                                    <tr><td><b>71</b> Com</td>
-                                        <td><b>54</b> Lead</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                 </div>
-                 <h6>Project Manager</h6>
-                 <h6>Project: Blue Torino</h6>
-             </div>
-         </ul> -->
 
         <div class="app-main__outer">
             <ul class="nav nav-tabs tabs-animated ">
@@ -91,7 +65,6 @@ body {margin: 10px 20px;}
             </ul>
             <div class="tab-content" >
                 <div class="tab-pane active" id="tab-content-0" role="tabpanel">
-
 
                     <!-- Workforce in Numbers -->
                      <div class="row">
@@ -297,19 +270,17 @@ body {margin: 10px 20px;}
                                                     <th>Project</th>
                                                     <th>Start date</th>
                                                     <th>Duration</th>
-                                                    <th>PM</th>
-                                                    <th>Workers</th>
+                                                    <th>Total workers</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
                                                 {% for i in range(0,len_projects)%}
                                                 <tr>
                                                     <th scope="row">{{i+1}}</th>
-                                                    <td>{{projects[i].name}}</td>
-                                                    <td>{{projects[i].starting_date}}</td>
-                                                    <td>{{projects[i].duration}}</td>
-                                                    <td>0</td>
-                                                    <td>0</td>
+                                                    <td>{{projects_pm[i][0].name}}</td>
+                                                    <td>{{projects_pm[i][0].starting_date}}</td>
+                                                    <td>{{projects_pm[i][0].duration}} weeks</td>
+                                                    <td>{{projects_pm[i][3]}}</td>
                                                 </tr>
                                                 {% endfor %}
                                                 </tbody>
@@ -317,6 +288,7 @@ body {margin: 10px 20px;}
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="col" style="max-width: 90%">
                                     <div class="card mb-3 widget-content bg-heavy-rain">
                                         <div class="widget-content-wrapper text-dark">
@@ -346,7 +318,6 @@ body {margin: 10px 20px;}
                                 <div class="col-md-12 col-lg-6" style="max-width: 50%">
                                     <form class="">
                                     <div class="position-relative row form-group"><label for="exSoftSkills" class="col-sm-2 col-form-label" style="flex: 25%; max-width: 30%; margin-top: 4%">Soft Skills</label>
-                                        <div class="col-sm-10" style="flex: 75%"><select name="selectSS" id="exSoftSkills" class="form-control" ></select></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-6">
@@ -357,15 +328,15 @@ body {margin: 10px 20px;}
                                                         <tr>
                                                             <th>Competence</th>
                                                             <th>Avg</th>
-                                                            <th>Number</th>
+                                                            <th>Number of Workers</th>
                                                         </tr>
                                                         </thead>
                                                         <tbody>
-                                                        {% for i in range (0,len_skills) %}
+                                                        {% for i in range (0,len_softskills) %}
                                                         <tr>
-                                                            <td>{{skills_table[i][0]}}</td>
-                                                            <td>{{skills_table[i][1]}}</td>
-                                                            <td>{{skills_table[i][2]}}</td>
+                                                            <td>{{softskills[i][0].name}}</td>
+                                                            <td>{{softskills[i][2]}}</td>
+                                                            <td>{{softskills[i][3]}}</td>
                                                         </tr>
                                                         {% endfor %}
                                                         </tbody>
@@ -375,36 +346,28 @@ body {margin: 10px 20px;}
                                         </div>
                                     </div>
                                     <div class="position-relative row form-group"><label for="exHardSkills" class="col-sm-2 col-form-label" style="flex: 25%; max-width: 30%; margin-top: 4%">Hard Skills</label>
-                                        <div class="col-sm-10" style="flex: 75%"><select name="selectHS" id="exHardSkills" class="form-control" ></select></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="main-card mb-3 card">
                                                 <div class="card-body">
                                                     <table class="mb-0 table table-hover">
-                                                        <thead>
-                                                        <tr>
-                                                            <th>Competence</th>
-                                                            <th>Avg</th>
-                                                            <th>Number</th>
-                                                        </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                        <tr>
-                                                            <td>CNC programming</td>
-                                                            <td>71</td>
-                                                            <td>82</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Machining</td>
-                                                            <td>68</td>
-                                                            <td>71</td>
-                                                        </tr><tr>
-                                                            <td>Coach Building</td>
-                                                            <td>85</td>
-                                                            <td>180</td>
-                                                        </tr>
-                                                        </tbody>
+                                                      <thead>
+                                                      <tr>
+                                                          <th>Competence</th>
+                                                          <th>Avg</th>
+                                                          <th>Number of Workers</th>
+                                                      </tr>
+                                                      </thead>
+                                                      <tbody>
+                                                      {% for i in range (0,len_hardskills) %}
+                                                      <tr>
+                                                          <td>{{hardskills[i][0].name}}</td>
+                                                          <td>{{hardskills[i][2]}}</td>
+                                                          <td>{{hardskills[i][3]}}</td>
+                                                      </tr>
+                                                      {% endfor %}
+                                                      </tbody>
                                                     </table>
                                                 </div>
                                             </div>
@@ -420,7 +383,7 @@ body {margin: 10px 20px;}
                                                 <div class="card-header-tab card-header-tab-animation card-header">
                                                     <div class="card-header-title">
                                                         <i class="header-icon lnr-apartment icon-gradient bg-love-kiss"> </i>
-                                                        Soft Skills
+                                                        Best Soft Skills
                                                     </div>
                                                 </div>
                                                 <div class="card-body">
@@ -429,7 +392,7 @@ body {margin: 10px 20px;}
                                                             <div class="card mb-3 widget-chart widget-chart2 text-left w-100">
                                                                 <div class="widget-chat-wrapper-outer">
                                                                     <div class="widget-chart-wrapper widget-chart-wrapper-lg opacity-10 m-0">
-                                                                        <canvas id="canvas"></canvas>
+                                                                      <canvas id="radarShart"></canvas>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -445,7 +408,7 @@ body {margin: 10px 20px;}
                                                 <div class="card-header-tab card-header-tab-animation card-header">
                                                     <div class="card-header-title">
                                                         <i class="header-icon lnr-apartment icon-gradient bg-love-kiss"> </i>
-                                                        Hard Skills
+                                                        Best Hard Skills
                                                     </div>
                                                 </div>
                                                 <div class="card-body">
@@ -454,7 +417,7 @@ body {margin: 10px 20px;}
                                                             <div class="card mb-3 widget-chart widget-chart2 text-left w-100">
                                                                 <div class="widget-chat-wrapper-outer">
                                                                     <div class="widget-chart-wrapper widget-chart-wrapper-lg opacity-10 m-0">
-                                                                        <canvas id="canvas"></canvas>
+                                                                        <canvas id="radarXhart"></canvas>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -473,7 +436,6 @@ body {margin: 10px 20px;}
 
                 </div>
 
-                {% block content %}
 
                 <div class="tab-pane" id="tab-content-2" role="tabpanel">
 
@@ -490,38 +452,8 @@ body {margin: 10px 20px;}
                                 </div>
                             </div>
                         </div>
-                        <div class="position-relative row form-group" ><label for="worker_hr_name" class="col-sm-2 col-form-label" style="flex: 9%; max-width: 9%">Name</label>
-                            <div class="col-sm-10" style="flex: 81%; max-width: 100%"><input name="Name" id="worker_hr_name" placeholder="Woker's name" type="text" class="form-control"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12 col-lg-6" style="max-width: 50%">
-                                <form class="">
-                                    <div class="position-relative row form-group"><label for="exampleSelect" class="col-sm-2 col-form-label">Plant</label>
-                                        <div class="col-sm-10"><select name="Plant" id="worker_hr_plant" class="form-control"></select></div>
-                                    </div>
-                                    <div class="position-relative row form-group"><label for="exampleSelect" class="col-sm-2 col-form-label">Project</label>
-                                        <div class="col-sm-10"><select name="Project" id="worker_hr_project"class="form-control"></select></div>
-                                    </div>
-                                </form>
-                            </div>
-                             <div class="col-md-12 col-lg-6" style="max-width: 50%">
-                                <form class="">
-                                    <div class="position-relative row form-group"><label for="exampleSelect" class="col-sm-2 col-form-label">Position</label>
-                                        <div class="col-sm-10"><select name="Position" id="worker_hr_position" class="form-control"></select></div>
-                                    </div>
-                                    <div class="position-relative row form-group"><label for="worker_hr_minavg" class="col-sm-2 col-form-label">Minimum Average</label>
-                                        <div class="col-sm-10"><input name="MinAvg" id="worker_hr_minavg" placeholder="Minimum Global Average" type="Number" class="form-control"></div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="position-relative row form-check" >
-                            <div class="col-sm-10 offset-sm-2">
-                                <button class="btn btn-secondary">Filter</button>
-                            </div>
-                        </div>
-                        </div>
+
+
                         <div class="divider"></div>
                         <div class="row">
                             <div class="col-lg-6">
@@ -535,23 +467,26 @@ body {margin: 10px 20px;}
                                                 <th>Position</th>
                                                 <th>Starting Date</th>
                                                 <th>Current Project</th>
-                                                <th>Average score</th>
+                                                <th>Avg Score</th>
+                                                <th>Availability</th>
                                                 <th>Edit</th>
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            {% for i in range(0, len_workers) %}
+                                            {% for i in range(0, len_everything) %}
                                             <tr>
                                               <th scope="row">{{i+1}}</th>
-                                                <td>{{everything[i][0][0][0].name}}</td>
-                                                <td>{{everything[i][0][0][2].name}}</td>
-                                                <td>{{everything[i][0][0][0].starting_date}}</td>
-                                                <td>{{everything[i][0][0][1].name}}</td>
-                                                <td>{{everything[i][1]}}</td>
+                                                <td>{{everything[i][0].name}}</td>
+                                                <td>{{everything[i][1].name}}</td>
+                                                <td>{{everything[i][0].starting_date}}</td>
+                                                <td>{{everything[i][2].name}}</td>
+                                                <td>{{everything[i][4]}}</td>
+                                                <td>{{everything[i][0].available}}</td>
                                                 <td class="text-center">
-                                                    <button type="button" class="btn mr-2 mb-2 btn-warning" data-toggle="modal" data-target=".btn_edit_worker">Edit</button>
+                                                    <a href="editWorker{{everything[i][0].id}}"> <button type="button" class="btn mr-2 mb-2 btn-warning" >Edit</button> </a>
                                                 </td>
                                             </tr>
+
                                             {% endfor %}
                                             </tbody>
                                         </table>
@@ -560,12 +495,8 @@ body {margin: 10px 20px;}
                             </div>
                         </div>
                     </div>
-
                     <!-- end -->
-
-
                 </div>
-                {% endblock content %}
 
                 <div class="tab-pane" id="tab-content-3" role="tabpanel">
 
@@ -574,17 +505,6 @@ body {margin: 10px 20px;}
                     <div class="card-body" style="padding: 0">
                         <h2>Evaluation of Results</h2>
                         <div class="row">
-                            <div class="position-relative row form-group" style="margin-left: 10px"><label for="eval_hr_from" class="col-sm-2 col-form-label" style="margin-top: 20px" >From</label>
-                                <div class="col-sm-10" ><input name="from" id="eval_hr_from" placeholder=today type="date" class="form-control"></div>
-                            </div>
-                            <div class="position-relative row form-group" style="margin-left: 10px"><label for="eval_hr_to" class="col-sm-2 col-form-label " style="margin-top: 20px">to</label>
-                                <div class="col-sm-10" ><input name="to" id="eval_hr_to" placeholder=today type="date" class="form-control"></div>
-                            </div>
-                            <div class="position-relative row form-check" >
-                                <div class="col-sm-10 offset-sm-2" style="margin-left: 10px">
-                                    <button class="btn btn-secondary">Filter</button>
-                                </div>
-                            </div>
                             <div class="col-md-12 col-lg-6" style="max-width: 50%; padding: 0">
                                 <div class="position-relative row form-check" >
                                     <div class="col-sm-10" style="padding: 15px; margin-left: 50%">
@@ -596,46 +516,30 @@ body {margin: 10px 20px;}
                         <div class="row">
                         <div class="col-lg-6">
                             <div class="main-card mb-3 card">
-                                <div class="card-body"><h5 class="card-title">Current Evaluations</h5>
+                                <div class="card-body"><h5 class="card-title">Non Completed Evaluations</h5>
                                     <table class="mb-0 table table-hover">
                                         <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Name of the evaluation</th>
+                                            <th>Project</th>
                                             <th>Start date</th>
-                                            <th>Number of workers</th>
+                                            <th>Unfinished evaluations</th>
                                             <th>Show Report</th>
+
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>March 2019</td>
-                                            <td>01/04/2019</td>
-                                            <td>27</td>
-                                            <td class="text-center">
-                                                <button type="button" class="btn mr-2 mb-2 btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Report</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td>End of Project ALpine A110</td>
-                                            <td>10/05/2019</td>
-                                            <td>15</td>
-                                            <td class="text-center">
-                                                <button type="button" class="btn mr-2 mb-2 btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg-2">Report</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                            <td>October 2019</td>
-                                            <td>31/10/2019</td>
-                                            <td>25</td>
-                                            </td>
-                                            <td class="text-center">
-                                                <button type="button" class="btn mr-2 mb-2 btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg-3">Report</button>
-                                            </td>
-                                        </tr>
+                                          {% for i in range(0, len_active_evaluations) %}
+                                          <tr>
+                                            <th scope="row">{{i+1}}</th>
+                                              <td>{{active_evaluations[i][0].name}}</td>
+                                              <td>{{active_evaluations[i][1].date}}</td>
+                                              <td>{{active_evaluations[i][2]}}</td>
+                                              <td class="text-center">
+                                                  <a href="seeReports{{active_evaluations[i][0].id}}"> <button type="button" class="btn mr-2 mb-2 btn-warning" >Show</button> </a>
+                                              </td>
+                                          </tr>
+                                          {% endfor %}
                                         </tbody>
                                     </table>
                                 </div>
@@ -645,7 +549,6 @@ body {margin: 10px 20px;}
                     </div>
                     <!-- end -->
 
-
                 </div>
             </div>
         </div>
@@ -654,6 +557,61 @@ body {margin: 10px 20px;}
 
 
 <script type="text/javascript" src="static/js2/main.js"></script>
+<script type="text/javascript">
+
+var ctxR = document.getElementById("radarXhart").getContext('2d');
+
+var myRadarChart = new Chart(ctxR, {
+type: 'radar',
+data: {
+labels: {{tophard|safe}},
+datasets: [{
+label: "Hard skills",
+data: {{tophards|safe}},
+backgroundColor: [
+'rgba(105, 0, 132, .2)',
+],
+borderColor: [
+'rgba(200, 99, 132, .7)',
+],
+borderWidth: 2
+}
+]
+},
+options: {
+responsive: true
+}
+});
+</script>
+<script type="text/javascript">
+
+var ctxR = document.getElementById("radarShart").getContext('2d');
+var myRadarChart = new Chart(ctxR, {
+type: 'radar',
+data: {
+labels: {{topsoft|safe}},
+datasets: [{
+label: "Soft skills",
+data: {{topsofts|safe}},
+backgroundColor: [
+'rgba(105, 0, 132, .2)',
+],
+borderColor: [
+'rgba(200, 99, 132, .7)',
+],
+borderWidth: 2
+}
+]
+},
+options: {
+responsive: true
+}
+});
+
+
+</script>
+
+
 </body>
 
 </html>
@@ -739,6 +697,8 @@ body {margin: 10px 20px;}
     </div>
 </div>
 
+
+<!-- CREATE WORKER -->
 <div class="modal fade btn_add_worker" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -748,6 +708,7 @@ body {margin: 10px 20px;}
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
+            <form action="" method="post" class="form-container">
             <div class="modal-body">
                 <div class="tab-content">
                     <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
@@ -755,7 +716,6 @@ body {margin: 10px 20px;}
                             <div class="col-md-12">
                                 <div class="row">
                                     <div class="card-body"><h5 class="card-title">Personal Data</h5>
-                                        <form class="">
                                             <div class="form-row">
                                                 <div class="position-relative form-group col-md-12">
                                                   {{ formReg.name.label }}
@@ -765,6 +725,8 @@ body {margin: 10px 20px;}
                                                           {{ error }}
                                                         </div>
                                                     {% endfor %}
+                                                    {{ formReg.hidden_tag() }}
+
                                                 </div>
                                                 <div class="position-relative form-group col-md-12">
                                                   {{ formReg.first_name.label }}
@@ -774,6 +736,8 @@ body {margin: 10px 20px;}
                                                           {{ error }}
                                                         </div>
                                                     {% endfor %}
+                                                    {{ formReg.hidden_tag() }}
+
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="position-relative form-group">
@@ -784,6 +748,8 @@ body {margin: 10px 20px;}
                                                               {{ error }}
                                                             </div>
                                                         {% endfor %}
+                                                        {{ formReg.hidden_tag() }}
+
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
@@ -863,7 +829,6 @@ body {margin: 10px 20px;}
                                                       {% endfor %}
                                                   </div>
                                                 </div>
-
                                                 <div class="col-md-6">
                                                     <div class="position-relative form-group">
                                                       {{ formReg.username.label }}
@@ -887,15 +852,167 @@ body {margin: 10px 20px;}
                                                     </div>
                                                 </div>
                                             </div>
-                                        </form>
                                     </div>
                                     <div class="card-body"><h5 class="card-title">Company</h5>
-                                        <form class="">
+                                        <div class="form-row">
+                                            <div class="position-relative form-group col-md-12">
+                                              {{ formReg.project.label }}
+                                                {{ formReg.project(class='form-control',placeholder='please write his project') }}
+                                                  {% for error in formReg.project.errors %}
+                                                    <div class="alert alert-danger" role="alert">
+                                                      {{ error }}
+                                                    </div>
+                                                {% endfor %}
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="position-relative form-group">
+                                                  {{ formReg.role.label }}
+                                                    {{ formReg.role(class='form-control',placeholder='please write his role') }}
+                                                      {% for error in formReg.role.errors %}
+                                                        <div class="alert alert-danger" role="alert">
+                                                          {{ error }}
+                                                        </div>
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                              <div class="position-relative form-group">
+                                                {{ formReg.plant.label }}
+                                                  {{ formReg.plant(class='form-control',placeholder='please write his plant') }}
+                                                    {% for error in formReg.role.errors %}
+                                                      <div class="alert alert-danger" role="alert">
+                                                        {{ error }}
+                                                      </div>
+                                                  {% endfor %}
+                                              </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="col-md-12">
+                                <div class="card-body"><h5 class="card-title">Soft skills</h5>
+                                        <div class="form-row">
+                                            <div class="position-relative row form-group" style="flex: 100%">
+                                                <div class="col-md-10" >
+                                                  {{ formReg.soft1(class='form-control',placeholder='please write his competence') }}
+                                                    {% for error in formReg.soft1.errors %}
+                                                      <div class="alert alert-danger" role="alert">
+                                                        {{ error }}
+                                                      </div>
+                                                  {% endfor %}
+                                                </div>
+                                                <div class="col-md-2" >
+                                                  {{ formReg.sscore1(class='form-control',placeholder='please write his score') }}
+                                                    {% for error in formReg.sscore1.errors %}
+                                                      <div class="alert alert-danger" role="alert">
+                                                        {{ error }}
+                                                      </div>
+                                                  {% endfor %}
+                                                </div>
+                                            </div>
+                                            <div class="position-relative row form-group" style="flex: 100%">
+                                                <div class="col-md-10" >
+                                                  {{ formReg.soft2(class='form-control',placeholder='please write his competence') }}
+                                                    {% for error in formReg.soft2.errors %}
+                                                      <div class="alert alert-danger" role="alert">
+                                                        {{ error }}
+                                                      </div>
+                                                  {% endfor %}
+                                                </div>
+                                                <div class="col-md-2" >
+                                                  {{ formReg.sscore2(class='form-control',placeholder='please write his score') }}
+                                                    {% for error in formReg.sscore2.errors %}
+                                                      <div class="alert alert-danger" role="alert">
+                                                        {{ error }}
+                                                      </div>
+                                                  {% endfor %}
+                                                </div>
+                                            </div>
+                                            <div class="position-relative row form-group" style="flex: 100%">
+                                                <div class="col-md-10" >
+                                                  {{ formReg.soft3(class='form-control',placeholder='please write his competence') }}
+                                                    {% for error in formReg.soft3.errors %}
+                                                      <div class="alert alert-danger" role="alert">
+                                                        {{ error }}
+                                                      </div>
+                                                  {% endfor %}
+                                                </div>
+                                                <div class="col-md-2" >
+                                                  {{ formReg.sscore3(class='form-control',placeholder='please write his score') }}
+                                                    {% for error in formReg.sscore3.errors %}
+                                                      <div class="alert alert-danger" role="alert">
+                                                        {{ error }}
+                                                      </div>
+                                                  {% endfor %}
+                                                </div>
+                                            </div>
+                                            <div class="position-relative row form-group" style="flex: 100%">
+                                                <div class="col-md-10" >
+                                                  {{ formReg.soft4(class='form-control',placeholder='please write his competence') }}
+                                                    {% for error in formReg.soft4.errors %}
+                                                      <div class="alert alert-danger" role="alert">
+                                                        {{ error }}
+                                                      </div>
+                                                  {% endfor %}
+
+                                                </div>
+                                                <div class="col-md-2" >
+                                                  {{ formReg.sscore4(class='form-control',placeholder='please write his score') }}
+                                                    {% for error in formReg.sscore4.errors %}
+                                                      <div class="alert alert-danger" role="alert">
+                                                        {{ error }}
+                                                      </div>
+                                                  {% endfor %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{ formReg.submit(class='btn btn-primary') }}
+            {{ formReg.hidden_tag() }}
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- CREATE EVALUATION -->
+<div class="modal fade btn_new_evaluation" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Add New Evalution</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="" method="post" class="form-container">
+            <div class="modal-body">
+                <div class="tab-content">
+                    <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
+                        <div class="main-card mb-3 card">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="card-body"><h5 class="card-title">Information</h5>
                                             <div class="form-row">
                                                 <div class="position-relative form-group col-md-12">
-                                                  {{ formReg.project.label }}
-                                                    {{ formReg.project(class='form-control',placeholder='please write his project') }}
-                                                      {% for error in formReg.project.errors %}
+                                                  {{ formEv.name.label }}
+                                                    {{ formEv.name(class='form-control',placeholder='please write its name') }}
+                                                      {% for error in formEv.name.errors %}
+                                                        <div class="alert alert-danger" role="alert">
+                                                          {{ error }}
+                                                        </div>
+                                                    {% endfor %}
+                                                </div>
+                                                <div class="position-relative form-group col-md-12">
+                                                  {{ formEv.starting_date.label }}
+                                                    {{ formEv.starting_date(class='form-control',placeholder='please write his starting date') }}
+                                                      {% for error in formEv.starting_date.errors %}
                                                         <div class="alert alert-danger" role="alert">
                                                           {{ error }}
                                                         </div>
@@ -903,339 +1020,30 @@ body {margin: 10px 20px;}
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="position-relative form-group">
-                                                      {{ formReg.role.label }}
-                                                        {{ formReg.role(class='form-control',placeholder='please write his role') }}
-                                                          {% for error in formReg.role.errors %}
+                                                      {{ formEv.project.label }}
+                                                        {{ formEv.project(class='form-control',placeholder='please write his surename') }}
+                                                          {% for error in formEv.project.errors %}
                                                             <div class="alert alert-danger" role="alert">
                                                               {{ error }}
                                                             </div>
                                                         {% endfor %}
                                                     </div>
                                                 </div>
-                                                <div class="col-md-6">
-                                                    <div class="position-relative form-group"><label for="exNewPlant" class="">Plant</label><input name="new_pant" id="exNewPlant"  type="text" class="form-control"></div>
-                                                </div>
                                             </div>
-                                        </form>
                                     </div>
                                 </div>
                             </div>
-                            <div class="divider"></div>
-                            <div class="col-md-12">
-                                <div class="card-body"><h5 class="card-title">Competences</h5>
-                                    <form class="">
-                                        <div class="form-row">
-                                            <div class="position-relative row form-group" style="flex: 100%"><label for="exSoftSkills" class="col-md-8 col-form-label">Soft Skills</label>
-                                                <div class="col-md-10" ><select name="selectSS" id="exSoftSkills" class="form-control" ></select></div>
-                                                <div class="col-md-2" ><input name="selectSS" id="exSoftSkills" class="form-control" type="number" placeholder="Score"></div>
-                                            </div>
-                                            <div class="position-relative row form-group" style="flex: 100%">
-                                                <div class="col-md-10" ><select name="selectSS" id="exSoftSkills" class="form-control" ></select></div>
-                                                <div class="col-md-2" ><input name="selectSS" id="exSoftSkills" class="form-control" type="number" placeholder="Score"></div>
-                                            </div>
-                                            <div class="position-relative row form-group" style="flex: 100%">
-                                                <div class="col-md-10" ><select name="selectSS" id="exSoftSkills" class="form-control" ></select></div>
-                                                <div class="col-md-2" ><input name="selectSS" id="exSoftSkills" class="form-control" type="number" placeholder="Score"></div>
-                                            </div>
-                                            <div class="position-relative row form-group" style="flex: 100%">
-                                                <div class="col-md-10" ><select name="selectSS" id="exSoftSkills" class="form-control" ></select></div>
-                                                <div class="col-md-2" ><input name="selectSS" id="exSoftSkills" class="form-control" type="number" placeholder="Score"></div>
-                                            </div>
-                                        </div>
-                                        <button type="button" class="btn mr-2 mb-2 btn-primary" data-toggle="modal" data-target=".btn_new_soft_skill">Add Soft Skill</button>
-                                    </form>
-                                </div>
-                                <div class="card-body">
-                                    <form class="">
-                                        <div class="form-row">
-                                            <div class="position-relative row form-group" style="flex: 100%"><label for="exSoftSkills" class="col-md-8 col-form-label">Hard Skills</label>
-                                                <div class="col-md-10" ><select name="selectSS" id="exSoftSkills" class="form-control" ></select></div>
-                                                <div class="col-md-2" ><input name="selectSS" id="exSoftSkills" class="form-control" type="number" placeholder="Score"></div>
-                                            </div>
-                                            <div class="position-relative row form-group" style="flex: 100%">
-                                                <div class="col-md-10" ><select name="selectSS" id="exSoftSkills" class="form-control" ></select></div>
-                                                <div class="col-md-2" ><input name="selectSS" id="exSoftSkills" class="form-control" type="number" placeholder="Score"></div>
-                                            </div>
-                                            <div class="position-relative row form-group" style="flex: 100%">
-                                                <div class="col-md-10" ><select name="selectSS" id="exSoftSkills" class="form-control" ></select></div>
-                                                <div class="col-md-2" ><input name="selectSS" id="exSoftSkills" class="form-control" type="number" placeholder="Score"></div>
-                                            </div>
-                                            <div class="position-relative row form-group" style="flex: 100%">
-                                                <div class="col-md-10" ><select name="selectSS" id="exSoftSkills" class="form-control" ></select></div>
-                                                <div class="col-md-2" ><input name="selectSS" id="exSoftSkills" class="form-control" type="number" placeholder="Score"></div>
-                                            </div>
-                                        </div>
-                                        <button type="button" class="btn mr-2 mb-2 btn-primary" data-toggle="modal" data-target=".btn_new_hard_skill">Add Hard Skill</button>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="divider"></div>
-                        </div>
                     </div>
                 </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Add worker</button>
-            </div>
+            {{ formEv.submit(class='btn btn-primary') }}
+            {{ formEv.hidden_tag() }}
         </div>
+      </form>
     </div>
+  </div>
 </div>
 
-<div class="modal fade btn_edit_worker" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Edit Worker</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="tab-content">
-                    <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
-                        <div class="main-card mb-3 card">
-                            <div class="col-md-12">
-                                <div class="row">
-                                    <div class="card-body"><h5 class="card-title">Personal Data</h5>
-                                        <form class="">
-                                            <div class="form-row">
-                                                <div class="position-relative form-group col-md-12"><label for="exNewFName" class="">First Name</label><input name="Fname" id="exNewFName" placeholder="Insert worker's first name" type="text" class="form-control"></div>
-                                                <div class="position-relative form-group col-md-12"><label for="exNewLName" class="">Last Name</label><input name="Lname" id="exNewLName" placeholder="Insert worker's last name" type="text" class="form-control"></div>
-                                                <div class="col-md-6">
-                                                    <div class="position-relative form-group"><label for="exNewMobile" class="">Mobile Number</label><input name="new_mobile" id="exNewMobile" placeholder="Insert worker's mobile number" type="text" class="form-control"></div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="position-relative form-group"><label for="exNewBD" class="">Birth date</label><input name="birthdate" id="exNewBD"  type="date" class="form-control"></div>
-                                                </div>
-                                                <div class="position-relative form-group col-md-12"><label for="exampleNewAddress" class="">Address</label><input name="new_address" id="exampleNewAddress" placeholder="1234 Main St" type="text" class="form-control"></div>
-                                                <div class="form-row">
-                                                    <div class="col-md-6">
-                                                        <div class="position-relative form-group"><label for="exampleNewCity" class="">City</label><input name="new_city" id="exampleNewCity" type="text" class="form-control"></div>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <div class="position-relative form-group"><label for="exampleNewState" class="">State</label><input name="new_state" id="exampleNewState" type="text" class="form-control"></div>
-                                                    </div>
-                                                    <div class="col-md-2">
-                                                        <div class="position-relative form-group"><label for="exampleNewZip" class="">Zip</label><input name="new_zip" id="exampleNewZip" type="text" class="form-control"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="position-relative form-group"><label for="exampleNewEmail11" class="">Email</label><input name="new_email" id="exampleNewEmail11" placeholder="with a placeholder" type="email" class="form-control"></div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="position-relative form-group"><label for="exampleNewPassword11" class="">Password</label><input name="new_password" id="exampleNewPassword11" placeholder="password placeholder" type="password" class="form-control"></div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="position-relative form-group"><label for="exNewID" class="">ID</label><input name="newID" id="exNewID" placeholder="Insert worker's ID" type="text" class="form-control"></div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div class="card-body"><h5 class="card-title">Company</h5>
-                                        <form class="">
-                                            <div class="form-row">
-                                                <div class="position-relative form-group col-md-12"><label for="exNewProject" class="">Project</label><select name="new_project" id="exNewPlant" type="text" class="form-control"></select></div>
-                                                <div class="col-md-6">
-                                                    <div class="position-relative form-group"><label for="exNewPosition" class="">Position</label><input name="new_position" id="exNewPosition" placeholder="Insert worker's Position" type="text" class="form-control"></div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="position-relative form-group"><label for="exNewPlant" class="">Plant</label><input name="new_pant" id="exNewPlant"  type="text" class="form-control"></div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="divider"></div>
-                            <div class="col-md-12">
-                                <div class="card-body"><h5 class="card-title">Competences</h5>
-                                    <form class="">
-                                        <div class="form-row">
-                                            <div class="position-relative row form-group" style="flex: 100%"><label for="exSoftSkills" class="col-md-8 col-form-label">Soft Skills</label>
-                                                <div class="col-md-10" ><select name="selectSS" id="exSoftSkills" class="form-control" ></select></div>
-                                                <div class="col-md-2" ><input name="selectSS" id="exSoftSkills" class="form-control" type="number" placeholder="Score"></div>
-                                            </div>
-                                            <div class="position-relative row form-group" style="flex: 100%">
-                                                <div class="col-md-10" ><select name="selectSS" id="exSoftSkills" class="form-control" ></select></div>
-                                                <div class="col-md-2" ><input name="selectSS" id="exSoftSkills" class="form-control" type="number" placeholder="Score"></div>
-                                            </div>
-                                            <div class="position-relative row form-group" style="flex: 100%">
-                                                <div class="col-md-10" ><select name="selectSS" id="exSoftSkills" class="form-control" ></select></div>
-                                                <div class="col-md-2" ><input name="selectSS" id="exSoftSkills" class="form-control" type="number" placeholder="Score"></div>
-                                            </div>
-                                            <div class="position-relative row form-group" style="flex: 100%">
-                                                <div class="col-md-10" ><select name="selectSS" id="exSoftSkills" class="form-control" ></select></div>
-                                                <div class="col-md-2" ><input name="selectSS" id="exSoftSkills" class="form-control" type="number" placeholder="Score"></div>
-                                            </div>
-                                        </div>
-                                        <button type="button" class="btn mr-2 mb-2 btn-primary" data-toggle="modal" data-target=".btn_new_soft_skill">Add Soft Skill</button>
-                                    </form>
-                                </div>
-                                <div class="card-body">
-                                    <form class="">
-                                        <div class="form-row">
-                                            <div class="position-relative row form-group" style="flex: 100%"><label for="exSoftSkills" class="col-md-8 col-form-label">Hard Skills</label>
-                                                <div class="col-md-10" ><select name="selectSS" id="exSoftSkills" class="form-control" ></select></div>
-                                                <div class="col-md-2" ><input name="selectSS" id="exSoftSkills" class="form-control" type="number" placeholder="Score"></div>
-                                            </div>
-                                            <div class="position-relative row form-group" style="flex: 100%">
-                                                <div class="col-md-10" ><select name="selectSS" id="exSoftSkills" class="form-control" ></select></div>
-                                                <div class="col-md-2" ><input name="selectSS" id="exSoftSkills" class="form-control" type="number" placeholder="Score"></div>
-                                            </div>
-                                            <div class="position-relative row form-group" style="flex: 100%">
-                                                <div class="col-md-10" ><select name="selectSS" id="exSoftSkills" class="form-control" ></select></div>
-                                                <div class="col-md-2" ><input name="selectSS" id="exSoftSkills" class="form-control" type="number" placeholder="Score"></div>
-                                            </div>
-                                            <div class="position-relative row form-group" style="flex: 100%">
-                                                <div class="col-md-10" ><select name="selectSS" id="exSoftSkills" class="form-control" ></select></div>
-                                                <div class="col-md-2" ><input name="selectSS" id="exSoftSkills" class="form-control" type="number" placeholder="Score"></div>
-                                            </div>
-                                        </div>
-                                        <button type="button" class="btn mr-2 mb-2 btn-primary" data-toggle="modal" data-target=".btn_new_hard_skill">Add Hard Skill</button>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="divider"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Save Changes</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade btn_new_soft_skill" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Create New Soft Skill</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-               <div class="main-card mb-3 card">
-                    <div class="col-md-12">
-                        <div class="row">
-                            <div class="card-body">
-                                <form class="">
-                                    <div class="form-row">
-                                        <div class="position-relative form-group col-md-12"><label for="exNewSSName" class="">Name</label><input name="NSS_name" id="exNewSSName" placeholder="Insert the new soft skill" type="text" class="form-control"></div>
-                                        <div class="position-relative form-group col-md-12"><label for="exNewSSDescription" class="">Description</label><textarea id="exNewSSDescription" placeholder="Insert a brief description of this new soft skill" type="text" class="form-control" rows="4"></textarea></div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Add Soft Skill</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade btn_new_hard_skill" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Create New Hard Skill</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-               <div class="main-card mb-3 card">
-                    <div class="col-md-12">
-                        <div class="row">
-                            <div class="card-body">
-                                <form class="">
-                                    <div class="form-row">
-                                        <div class="position-relative form-group col-md-12"><label for="exNewHSName" class="">Name</label><input name="NHS_name" id="exNewHSName" placeholder="Insert the new hard skill" type="text" class="form-control"></div>
-                                        <div class="position-relative form-group col-md-12"><label for="exNewHSDescription" class="">Description</label><textarea id="exNewHSDescription" placeholder="Insert a brief description of this new hard skill" type="text" class="form-control" rows="4"></textarea></div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Add Hard Skill</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade btn_new_evaluation" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Create New Evaluation</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-               <div class="main-card mb-3 card">
-                    <div class="card-body">
-                        <div class="row">
-                           <div class="position-relative row form-group" style="width: 100%"><label for="hr_eval" class="col-sm-2 col-form-label" style="flex: 9%; max-width: 9%; padding-top: 2%">Name</label>
-                                <div class="col-sm-10" style="flex: 81%; max-width: 100%"><input name="Name" id="hr_eval" placeholder="Name of the Evaluation" type="text" class="form-control"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12 col-lg-6" style="max-width: 50%">
-                                <form class="">
-                                    <div class="position-relative row form-group" style="width: 100%"><label for="eval_id" class="col-form-label" style="width: 40%; padding-top:25px;">Evaluation ID</label>
-                                        <div class="col-sm-10" style="width: 60%;flex: 60%"><input name="EvalID" id="eval_id" class="form-control" placeholder="ID" type="number" style="max-width: 100%"></div>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="col-md-12 col-lg-6" style="max-width: 50%">
-                                <form class="">
-                                    <div class="position-relative row form-group" style="width: 100%"><label for="eval_date" class="col-form-label" style="width: 40%; padding-top:25px">Date</label>
-                                        <div class="col-sm-10" style="width: 60%; flex: 60%"><input name="EvalDate" id="eval_date" class="form-control" placeholder="Start date" type="date" style="max-width: 100%"></div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12 col-lg-6" style="max-width: 50%">
-                                <form class="">
-                                    <div class="position-relative row form-group" style="width: 100%"><label for="eval_proj_name" class="col-form-label" style="width: 40%; padding-top:25px">Project Name</label>
-                                        <div class="col-sm-10" style="width: 60%; flex: 60%"><select name="EvalProjName" id="eval_proj_name" class="form-control"  type="text" style="max-width: 100%"></select></div>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="col-md-12 col-lg-6" style="max-width: 50%">
-                                <form class="">
-                                    <div class="position-relative row form-group" style="width: 100%"><label for="eval_proj_id" class="col-form-label" style="width: 40%; padding-top:25px;">Project ID</label>
-                                        <div class="col-sm-10" style="width: 60%;flex: 60%"><input name="EvalProjID" id="eval_proj_id" class="form-control" placeholder="ID" type="number" style="max-width: 100%"></div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                         <div class="col-md-12 col-lg-6" style="width: 100%">
-                            <div class="position-relative form-group col-md-12" ><label for="new_proj_description" class="">Description</label><textarea id="new_proj_description" placeholder="Insert a brief description of this new evaluation" type="text" class="form-control" rows="4"></textarea></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Create Evaluation</button>
-            </div>
-        </div>
-    </div>
-</div>
+{% endblock content %}
 
 <!-- end -->

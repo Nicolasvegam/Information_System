@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+    <meta name="description" content="Tabs are used to split content between multiple sections. Wide variety available.">
+    <meta name="msapplication-tap-highlight" content="no">
+    <link href="static/css2/style.css" rel="stylesheet">
+    <title>TERA - PM</title>
+    <!--
+    =========================================================
+    * ArchitectUI HTML Theme Dashboard - v1.0.0
+    =========================================================
+    * Product Page: https://dashboardpack.com
+    * Copyright 2019 DashboardPack (https://dashboardpack.com)
+    * Licensed under MIT (https://github.com/DashboardPack/architectui-html-theme-free/blob/master/LICENSE)
+    =========================================================
+    * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+    -->
+
+<!--            Edited in 09/12/2019            -->
+
+
+<link href="static/css2/main.css" rel="stylesheet">
+
+<style>
+body {margin: 10px 20px;}
+
+* {box-sizing: border-box}
+
+</style>
+
+
+</head>
+
+
+<body>
+
+<!--TERA LOGO-->
+<div class="container-fluid">
+    <a class="navbar-brand" href="home" ><img src="static/img/logo2.png" alt="TERA"></a>
+    <a href="workerProfile"> <button type="button" style="float: right;" class="btn mr-2 mb-2 btn-warning" >Worker Mood</button> </a>
+    <a href="logout"> <button type="button" style="float: right;" class="btn mr-2 mb-2 btn-warning" >Logout</button> </a>
+
+</div>
+<!-- -->
+
+<div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
+
+    <div class="app-main">
+
+        <div class="app-main__outer">
+            <ul class="nav nav-tabs tabs-animated ">
+                <li class="nav-item"><a data-toggle="tab" href="#tab-content-0" class="active nav-link">New Project</a></li>
+            </ul>
+            <div class="tab-content" >
+                <div class="tab-pane active" id="tab-content-0" role="tabpanel">
+
+                  <!-- New Projects -->
+                  <div class="main-card mb-3 card">
+                      <h1 class="card-title"> Manage Project</h1>
+                      <form action="" method="post" class="form-container">
+                      <div class="card-body">
+                        <div class="form-row">
+
+                            <div class="col-md-6">
+                                <div class="position-relative form-group">
+                                  {{ ProjectForm.name.label }}
+                                    {{ ProjectForm.name(class='form-control',placeholder='please write its name') }}
+                                      {% for error in ProjectForm.name.errors %}
+                                        <div class="alert alert-danger" role="alert">
+                                          {{ error }}
+                                        </div>
+                                    {% endfor %}
+
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="position-relative form-group">
+                                  {{ ProjectForm.duration.label }}
+                                    {{ ProjectForm.duration(class='form-control') }}
+                                      {% for error in ProjectForm.duration.errors %}
+                                        <div class="alert alert-danger" role="alert">
+                                          {{ error }}
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="form-row">
+
+                            <div class="col-md-6">
+                                <div class="position-relative form-group">
+                                  {{ ProjectForm.description.label }}
+                                    {{ ProjectForm.description(class='form-control',placeholder='please write its short description') }}
+                                      {% for error in ProjectForm.description.errors %}
+                                        <div class="alert alert-danger" role="alert">
+                                          {{ error }}
+                                        </div>
+                                    {% endfor %}
+
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="position-relative form-group">
+                                  {{ ProjectForm.starting_date.label }}
+                                    {{ ProjectForm.starting_date(class='form-control',placeholder='please write its starting date') }}
+                                      {% for error in ProjectForm.starting_date.errors %}
+                                        <div class="alert alert-danger" role="alert">
+                                          {{ error }}
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+
+                        </div>
+
+                          <div class="row">
+                              <div class="col-md-12">
+                                  <div class="card-body"><h5 class="card-title"> Current Team</h5>
+                                    <div class="position-relative row form-group" style="flex: 100%">
+                                      <table class="mb-0 table table-hover">
+                                          <thead>
+                                          <tr>
+                                              <th>Name</th>
+                                              <th>Role</th>
+                                              <th>Score</th>
+                                              <th>In/Out</th>
+
+                                          </tr>
+                                          </thead>
+                                          <tbody>
+                                          {% for user in project_users %}
+                                          <tr>
+                                            <td>
+                                              {{ ProjectForm|attr(user[0].name)(class='form-control', readonly="readonly") }}
+                                            </td>
+                                            <td> {{user[1].name}} </td>
+                                            <td> {{user[3]}} </td>
+                                            <td>
+                                              {{ ProjectForm|attr(user[0].name + 'check')(class='form-control',placeholder='', checked = True) }}
+                                            </td>
+                                          </tr>
+
+                                          {% endfor %}
+                                          </tbody>
+                                      </table>
+
+                                    </div>
+
+                                    </div>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-12">
+                                  <div class="card-body"><h5 class="card-title"> Available Workers</h5>
+                                    <div class="position-relative row form-group" style="flex: 100%">
+                                      <table class="mb-0 table table-hover">
+                                          <thead>
+                                          <tr>
+                                              <th>Name</th>
+                                              <th>Role</th>
+                                              <th>Score</th>
+                                              <th>In/Out</th>
+
+                                          </tr>
+                                          </thead>
+                                          <tbody>
+                                          {% for user in not_project_users %}
+                                          <tr>
+                                            <td>
+
+                                              {{ ProjectForm|attr(user[0].name)(class='form-control', readonly="readonly") }}
+                                            </td>
+                                            <td> {{user[1].name}} </td>
+                                            <td> {{user[3]}} </td>
+                                            <td>
+                                              {{ ProjectForm|attr(user[0].name + 'check')(class='form-control',placeholder='') }}
+                                            </td>
+                                          </tr>
+
+                                          {% endfor %}
+                                          </tbody>
+                                      </table>
+
+                                    </div>
+
+                                    </div>
+                              </div>
+                          </div>
+
+                          {{ ProjectForm.submit(class='btn btn-primary') }}
+                          {{ ProjectForm.hidden_tag() }}
+                      </div>
+                    </form>
+                  </div>
+                  <!-- end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="static/js2/main.js"></script>
+</body>
+
+</html>
